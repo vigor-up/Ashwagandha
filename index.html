@@ -66,25 +66,41 @@
             }
         }
     </style>
+    <!-- 防止選取 / 複製 (可選) -->
+    <style>
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
 </head>
 <body class="font-sans text-dark bg-gray-50">
+    <!-- 語言切換器 (固定右上角) -->
+    <div class="language-switcher fixed top-4 right-4 z-50 flex gap-1 bg-white rounded-full shadow-md border border-primary/20 p-1">
+        <button class="lang-btn px-3 py-1.5 text-sm font-medium rounded-full transition-all" data-lang="zh-TW">繁</button>
+        <button class="lang-btn px-3 py-1.5 text-sm font-medium rounded-full transition-all" data-lang="zh-CN">简</button>
+        <button class="lang-btn px-3 py-1.5 text-sm font-medium rounded-full transition-all" data-lang="en">EN</button>
+    </div>
+
     <!-- 頁首導航欄 (嵌入LOGO + 響應式導航) -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
+    <header class="sticky top-0 z-40 bg-white shadow-md">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between py-4">
                 <!-- LOGO 區塊 -->
                 <a href="#" class="flex items-center space-x-2">
                     <img src="assets/logo.png" alt="活力得® 品牌LOGO" class="h-12 w-auto">
-                    <span class="text-xl font-bold text-primary">活力得®</span>
+                    <span class="text-xl font-bold text-primary" data-translate="brand_name">活力得®</span>
                 </a>
                 
                 <!-- 桌面端導航 -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#summary" class="text-gray-700 hover:text-primary transition-colors font-medium">執行摘要</a>
-                    <a href="#technology" class="text-gray-700 hover:text-primary transition-colors font-medium">核心技術</a>
-                    <a href="#mechanism" class="text-gray-700 hover:text-primary transition-colors font-medium">作用機轉</a>
-                    <a href="#benefit" class="text-gray-700 hover:text-primary transition-colors font-medium">效益與安全</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium">聯繫我們</a>
+                    <a href="#summary" class="text-gray-700 hover:text-primary transition-colors font-medium" data-translate="nav_summary">執行摘要</a>
+                    <a href="#technology" class="text-gray-700 hover:text-primary transition-colors font-medium" data-translate="nav_tech">核心技術</a>
+                    <a href="#mechanism" class="text-gray-700 hover:text-primary transition-colors font-medium" data-translate="nav_mechanism">作用機轉</a>
+                    <a href="#benefit" class="text-gray-700 hover:text-primary transition-colors font-medium" data-translate="nav_benefit">效益與安全</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium" data-translate="nav_contact">聯繫我們</a>
                 </nav>
                 
                 <!-- 行動端漢堡按鈕 -->
@@ -96,11 +112,11 @@
             <!-- 行動端導航選單 (預設隱藏) -->
             <div class="md:hidden hidden pb-4" id="mobileMenu">
                 <nav class="flex flex-col space-y-3">
-                    <a href="#summary" class="text-gray-700 hover:text-primary transition-colors font-medium py-2">執行摘要</a>
-                    <a href="#technology" class="text-gray-700 hover:text-primary transition-colors font-medium py-2">核心技術</a>
-                    <a href="#mechanism" class="text-gray-700 hover:text-primary transition-colors font-medium py-2">作用機轉</a>
-                    <a href="#benefit" class="text-gray-700 hover:text-primary transition-colors font-medium py-2">效益與安全</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium py-2">聯繫我們</a>
+                    <a href="#summary" class="text-gray-700 hover:text-primary transition-colors font-medium py-2" data-translate="nav_summary">執行摘要</a>
+                    <a href="#technology" class="text-gray-700 hover:text-primary transition-colors font-medium py-2" data-translate="nav_tech">核心技術</a>
+                    <a href="#mechanism" class="text-gray-700 hover:text-primary transition-colors font-medium py-2" data-translate="nav_mechanism">作用機轉</a>
+                    <a href="#benefit" class="text-gray-700 hover:text-primary transition-colors font-medium py-2" data-translate="nav_benefit">效益與安全</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium py-2" data-translate="nav_contact">聯繫我們</a>
                 </nav>
             </div>
         </div>
@@ -108,17 +124,17 @@
 
     <!-- 頂部橫幅區 -->
     <section class="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
-        <!-- 圖片1: 橫幅主視覺 -->
-        <img class="absolute inset-0 w-full h-full object-cover" src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/54f47b134467453ca5c78e9adf03ba12.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260207201723825A27D286EB3C16C118&rrcfp=8a172a1a&x-expires=1771071443&x-signature=ZB%2BVzG2dCKs2D%2FOCmffwfGzEwXs%3D" alt="活力得® 南非醉茄有機種植與萃取工藝" />
+        <!-- 圖片1: 橫幅主視覺 (檔名: 54f47b134467453ca5c78e9adf03ba12.png) -->
+        <img class="absolute inset-0 w-full h-full object-cover" src="assets/54f47b134467453ca5c78e9adf03ba12.png" alt="活力得® 南非醉茄有機種植與萃取工藝" data-translate="banner_alt">
         <div class="absolute inset-0 bg-dark/50 flex flex-col justify-center items-center text-white px-4 md:px-8">
-            <div class="text-[clamp(1.8rem,5vw,3.5rem)] font-black text-shadow-lg text-center leading-tight">
+            <div class="text-[clamp(1.8rem,5vw,3.5rem)] font-black text-shadow-lg text-center leading-tight" data-translate="banner_title">
                 &nbsp; 活力得&reg; 南非醉茄（Ashwagandha）<br class="md:hidden" />專利萃取精華
             </div>
-            <div class="mt-6 text-[clamp(1rem,2vw,1.25rem)] font-light text-shadow text-center max-w-4xl leading-relaxed">
+            <div class="mt-6 text-[clamp(1rem,2vw,1.25rem)] font-light text-shadow text-center max-w-4xl leading-relaxed" data-translate="banner_subtitle">
                 技術數據表（TDS）｜標準化5%醉茄內酯 &middot; 超臨界CO₂萃取 &middot; 高生物利用度<br class="md:hidden" /> 
                 【專攻中老年泌尿健康】頻尿/漏尿/夜尿改善 &middot; 腎絲球功能提升
             </div>
-            <div class="mt-8 bg-primary/80 px-8 py-3 rounded-base text-lg font-bold hover:bg-primary transition-colors cursor-pointer transform hover:scale-105 duration-300">
+            <div class="mt-8 bg-primary/80 px-8 py-3 rounded-base text-lg font-bold hover:bg-primary transition-colors cursor-pointer transform hover:scale-105 duration-300" data-translate="banner_footer">
                 活力得&reg; 天然草本保健 &copy; 2026
             </div>
         </div>
@@ -130,58 +146,58 @@
         <section id="summary" class="mb-16 md:mb-20">
             <h2 class="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-primary mb-6 md:mb-8 flex items-center">
                 <i class="fa-solid fa-chart-line mr-3 text-secondary"></i>
-                執行摘要：活力得&reg; 核心價值與關鍵指標
+                <span data-translate="summary_title">執行摘要：活力得&reg; 核心價值與關鍵指標</span>
             </h2>
-            <p class="text-lg md:text-xl mb-8 md:mb-10 leading-relaxed md:leading-loose">
+            <p class="text-lg md:text-xl mb-8 md:mb-10 leading-relaxed md:leading-loose" data-translate="summary_desc">
                 <strong class="text-secondary">核心定位：</strong>基於專利超臨界CO₂萃取技術與生物轉化工藝，標準化提取南非醉茄（Withania somnifera）根部活性成分，針對現代人壓力、睡眠、精力不足等核心痛點，同時專攻中老年泌尿健康問題（頻尿/漏尿/夜尿），提升腎絲球濾過功能，實現多維度天然草本保健「黃金標準」。
             </p>
             
             <!-- 摘要數據卡片 -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-8 md:mb-10">
                 <div class="bg-neutral rounded-card shadow-card p-6 hover:shadow-hover transition-all duration-300 transform hover:-translate-y-1">
-                    <h4 class="font-bold text-lg mb-3 text-secondary">醉茄內酯含量</h4>
-                    <div class="text-base text-gray-600 mb-2">傳統萃取 2-3% &rarr; 標準化 5%</div>
-                    <div class="text-2xl font-bold text-accent mb-3">&uarr; 67-150%</div>
-                    <p class="text-gray-700">顯著提升活性成分濃度</p>
+                    <h4 class="font-bold text-lg mb-3 text-secondary" data-translate="card1_title">醉茄內酯含量</h4>
+                    <div class="text-base text-gray-600 mb-2" data-translate="card1_comp">傳統萃取 2-3% &rarr; 標準化 5%</div>
+                    <div class="text-2xl font-bold text-accent mb-3" data-translate="card1_value">&uarr; 67-150%</div>
+                    <p class="text-gray-700" data-translate="card1_desc">顯著提升活性成分濃度</p>
                 </div>
                 <div class="bg-neutral rounded-card shadow-card p-6 hover:shadow-hover transition-all duration-300 transform hover:-translate-y-1">
-                    <h4 class="font-bold text-lg mb-3 text-secondary">生物利用度</h4>
-                    <div class="text-base text-gray-600 mb-2">普通粉末 15% &rarr; 微囊化 45%</div>
-                    <div class="text-2xl font-bold text-accent mb-3">&uarr; 200%</div>
-                    <p class="text-gray-700">大幅提升人體吸收效率</p>
+                    <h4 class="font-bold text-lg mb-3 text-secondary" data-translate="card2_title">生物利用度</h4>
+                    <div class="text-base text-gray-600 mb-2" data-translate="card2_comp">普通粉末 15% &rarr; 微囊化 45%</div>
+                    <div class="text-2xl font-bold text-accent mb-3" data-translate="card2_value">&uarr; 200%</div>
+                    <p class="text-gray-700" data-translate="card2_desc">大幅提升人體吸收效率</p>
                 </div>
                 <div class="bg-neutral rounded-card shadow-card p-6 hover:shadow-hover transition-all duration-300 transform hover:-translate-y-1">
-                    <h4 class="font-bold text-lg mb-3 text-secondary">應激激素（皮質醇）</h4>
-                    <div class="text-base text-gray-600 mb-2">基線 &rarr; 降低 28%</div>
-                    <div class="text-2xl font-bold text-accent mb-3">&darr; 28%</div>
-                    <p class="text-gray-700">有效緩解慢性壓力</p>
+                    <h4 class="font-bold text-lg mb-3 text-secondary" data-translate="card3_title">應激激素（皮質醇）</h4>
+                    <div class="text-base text-gray-600 mb-2" data-translate="card3_comp">基線 &rarr; 降低 28%</div>
+                    <div class="text-2xl font-bold text-accent mb-3" data-translate="card3_value">&darr; 28%</div>
+                    <p class="text-gray-700" data-translate="card3_desc">有效緩解慢性壓力</p>
                 </div>
                 <div class="bg-neutral rounded-card shadow-card p-6 hover:shadow-hover transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-urinary">
-                    <h4 class="font-bold text-lg mb-3 text-urinary">夜尿次數</h4>
-                    <div class="text-base text-gray-600 mb-2">基線 4.2次 &rarr; 改善後 1.1次</div>
-                    <div class="text-2xl font-bold text-urinary mb-3">&darr; 74%</div>
-                    <p class="text-gray-700">中老年夜尿頻繁顯著改善</p>
+                    <h4 class="font-bold text-lg mb-3 text-urinary" data-translate="card4_title">夜尿次數</h4>
+                    <div class="text-base text-gray-600 mb-2" data-translate="card4_comp">基線 4.2次 &rarr; 改善後 1.1次</div>
+                    <div class="text-2xl font-bold text-urinary mb-3" data-translate="card4_value">&darr; 74%</div>
+                    <p class="text-gray-700" data-translate="card4_desc">中老年夜尿頻繁顯著改善</p>
                 </div>
                 <div class="bg-neutral rounded-card shadow-card p-6 hover:shadow-hover transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-kidney">
-                    <h4 class="font-bold text-lg mb-3 text-kidney">腎絲球濾過率（eGFR）</h4>
-                    <div class="text-base text-gray-600 mb-2">基線 &rarr; 提升 18%</div>
-                    <div class="text-2xl font-bold text-kidney mb-3">&uarr; 18%</div>
-                    <p class="text-gray-700">腎功能核心指標優化</p>
+                    <h4 class="font-bold text-lg mb-3 text-kidney" data-translate="card5_title">腎絲球濾過率（eGFR）</h4>
+                    <div class="text-base text-gray-600 mb-2" data-translate="card5_comp">基線 &rarr; 提升 18%</div>
+                    <div class="text-2xl font-bold text-kidney mb-3" data-translate="card5_value">&uarr; 18%</div>
+                    <p class="text-gray-700" data-translate="card5_desc">腎功能核心指標優化</p>
                 </div>
             </div>
             
             <!-- 高亮效益區塊 -->
             <div class="bg-gradient-herb rounded-card p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="text-center md:text-left">
-                    <div class="text-4xl md:text-6xl font-black text-secondary">98.7%</div>
-                    <div class="text-lg md:text-xl text-dark/80 mt-2">活性成分保留率</div>
+                    <div class="text-4xl md:text-6xl font-black text-secondary" data-translate="highlight_num">98.7%</div>
+                    <div class="text-lg md:text-xl text-dark/80 mt-2" data-translate="highlight_text">活性成分保留率</div>
                 </div>
                 <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-center text-lg">
-                    <div class="font-bold">無溶劑殘留</div>
+                    <div class="font-bold" data-translate="highlight_badge1">無溶劑殘留</div>
                     <div class="hidden md:block text-dark/50">│</div>
-                    <div class="font-bold">符合國際有機認證</div>
+                    <div class="font-bold" data-translate="highlight_badge2">符合國際有機認證</div>
                     <div class="hidden md:block text-dark/50">│</div>
-                    <div class="font-bold text-urinary">中老年泌尿健康專攻</div>
+                    <div class="font-bold text-urinary" data-translate="highlight_badge3">中老年泌尿健康專攻</div>
                 </div>
             </div>
         </section>
@@ -190,56 +206,56 @@
         <section id="technology" class="mb-16 md:mb-20">
             <h2 class="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-primary mb-6 md:mb-8 flex items-center">
                 <i class="fa-solid fa-flask-vial mr-3 text-secondary"></i>
-                活力得&reg; 南非醉茄核心萃取技術架構
+                <span data-translate="tech_title">活力得&reg; 南非醉茄核心萃取技術架構</span>
             </h2>
             <div class="flex flex-col md:flex-row gap-8 md:gap-10 items-center mb-8 md:mb-12">
                 <div class="w-full md:w-1/2">
-                    <p class="text-lg md:text-xl mb-6 md:mb-8 leading-relaxed">
+                    <p class="text-lg md:text-xl mb-6 md:mb-8 leading-relaxed" data-translate="tech_desc1">
                         <strong class="text-secondary">三層協同萃取工藝｜</strong>精準保留南非醉茄活性成分與生物活性
                     </p>
                     <div class="space-y-4 mb-6 md:mb-8">
                         <div class="bg-neutral rounded-base p-4 shadow-sm hover:shadow-md transition-shadow">
-                            <h4 class="font-bold text-secondary text-lg">超臨界CO₂萃取</h4>
-                            <p class="text-gray-700">低溫無溶劑，保留98%+活性成分，避免熱敏性成分破壞</p>
+                            <h4 class="font-bold text-secondary text-lg" data-translate="tech_sub1">超臨界CO₂萃取</h4>
+                            <p class="text-gray-700" data-translate="tech_sub1_desc">低溫無溶劑，保留98%+活性成分，避免熱敏性成分破壞</p>
                         </div>
                         <div class="bg-neutral rounded-base p-4 shadow-sm hover:shadow-md transition-shadow">
-                            <h4 class="font-bold text-secondary text-lg">生物轉化技術</h4>
-                            <p class="text-gray-700">透過微生物發酵技術，提升醉茄內酯生物利用度200%</p>
+                            <h4 class="font-bold text-secondary text-lg" data-translate="tech_sub2">生物轉化技術</h4>
+                            <p class="text-gray-700" data-translate="tech_sub2_desc">透過微生物發酵技術，提升醉茄內酯生物利用度200%</p>
                         </div>
                         <div class="bg-neutral rounded-base p-4 shadow-sm hover:shadow-md transition-shadow">
-                            <h4 class="font-bold text-secondary text-lg">微囊化包埋</h4>
-                            <p class="text-gray-700">保護活性成分不被胃酸破壞，確保達到腸道有效吸收</p>
+                            <h4 class="font-bold text-secondary text-lg" data-translate="tech_sub3">微囊化包埋</h4>
+                            <p class="text-gray-700" data-translate="tech_sub3_desc">保護活性成分不被胃酸破壞，確保達到腸道有效吸收</p>
                         </div>
                     </div>
-                    <p class="text-center font-bold mb-4 md:mb-6 text-lg">※ 建議每日劑量：500mg（含5%醉茄內酯），隨餐服用，1~3天/次</p>
-                    <div class="text-center mb-4 md:mb-6 text-gray-700">
+                    <p class="text-center font-bold mb-4 md:mb-6 text-lg" data-translate="tech_dosage">※ 建議每日劑量：500mg（含5%醉茄內酯），隨餐服用，1~3天/次</p>
+                    <div class="text-center mb-4 md:mb-6 text-gray-700" data-translate="tech_note">
                         工藝為商業機密，基於專利萃取平台與國際前沿草本技術研發<br>
                         生產車間符合GMP/GACP國際認證標準
                     </div>
                 </div>
-                <!-- 圖片2: 萃取工藝圖 -->
+                <!-- 圖片2: 萃取工藝圖 (檔名: 1a7bf1428cff4c5ebc0790d8558b190c.png) -->
                 <div class="w-full md:w-1/2 img-hover-zoom shadow-img">
-                    <img class="w-full h-auto rounded-img" src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/1a7bf1428cff4c5ebc0790d8558b190c.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260207201723825A27D286EB3C16C118&rrcfp=8a172a1a&x-expires=1771071443&x-signature=bCHjAY%2BStimG%2BnYK1tbYh4FTY%2B4%3D" alt="活力得&reg; 南非醉茄三層協同萃取工藝" />
+                    <img class="w-full h-auto rounded-img" src="assets/1a7bf1428cff4c5ebc0790d8558b190c.png" alt="活力得® 南非醉茄三層協同萃取工藝" data-translate="tech_img_alt">
                 </div>
             </div>
             
             <!-- 有機種植與原料管控 -->
             <div class="mt-12 bg-white rounded-card shadow-card p-6 md:p-8">
-                <h3 class="font-bold text-xl mb-4 text-secondary">有機種植與原料品質管控</h3>
-                <!-- 圖片3: 有機種植圖 -->
+                <h3 class="font-bold text-xl mb-4 text-secondary" data-translate="organic_title">有機種植與原料品質管控</h3>
+                <!-- 圖片3: 有機種植圖 (檔名: f26997eb10644c7b9badf86a667adab8.png) -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                     <div class="md:col-span-1 img-hover-zoom shadow-img">
-                        <img class="w-full h-auto rounded-img" src="https://p11-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/f26997eb10644c7b9badf86a667adab8.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260207201723825A27D286EB3C16C118&rrcfp=8a172a1a&x-expires=1771071443&x-signature=6BzFawRk900z2lLt1QP8%2FXE0af8%3D" alt="南非醉茄有機種植基地" />
+                        <img class="w-full h-auto rounded-img" src="assets/f26997eb10644c7b9badf86a667adab8.png" alt="南非醉茄有機種植基地" data-translate="organic_img_alt">
                     </div>
                     <div class="md:col-span-2">
-                        <p class="text-lg leading-relaxed mb-4">
+                        <p class="text-lg leading-relaxed mb-4" data-translate="organic_desc">
                             活力得®南非醉茄原料來自印度拉賈斯坦邦有機認證種植基地，遠離工業污染，採用自然農法種植，確保原料無農藥殘留、重金屬符合國際標準。
                         </p>
                         <ul class="list-disc list-inside space-y-2 text-gray-700">
-                            <li>原料通過ISO 17025實驗室檢測，重金屬（鉛/汞/砷/鎘）含量低於國際限量標準</li>
-                            <li>農藥殘留檢測：0檢出（覆蓋200+常見農藥項目）</li>
-                            <li>微生物指標：總菌落數 &lt; 100 CFU/g，大腸桿菌/沙門氏菌/黴菌 均未檢出</li>
-                            <li>原料採收後48小時內完成初加工，確保新鮮度與活性成分保留</li>
+                            <li data-translate="organic_bullet1">原料通過ISO 17025實驗室檢測，重金屬（鉛/汞/砷/鎘）含量低於國際限量標準</li>
+                            <li data-translate="organic_bullet2">農藥殘留檢測：0檢出（覆蓋200+常見農藥項目）</li>
+                            <li data-translate="organic_bullet3">微生物指標：總菌落數 &lt; 100 CFU/g，大腸桿菌/沙門氏菌/黴菌 均未檢出</li>
+                            <li data-translate="organic_bullet4">原料採收後48小時內完成初加工，確保新鮮度與活性成分保留</li>
                         </ul>
                     </div>
                 </div>
@@ -250,157 +266,157 @@
         <section id="mechanism" class="mb-16 md:mb-20">
             <h2 class="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-primary mb-6 md:mb-8 flex items-center">
                 <i class="fa-solid fa-dna mr-3 text-secondary"></i>
-                活力得&reg; 南非醉茄四大核心作用機轉
+                <span data-translate="mechanism_title">活力得&reg; 南非醉茄四大核心作用機轉</span>
             </h2>
             
-            <!-- 核心數據圖表展示 -->
+            <!-- 核心數據圖表展示 (圖片4-7) -->
             <div class="grid grid-cols-1 gap-8 md:gap-10 mb-12 md:mb-16">
-                <!-- 圖片4: 醉茄內酯含量對比 -->
+                <!-- 圖片4: 醉茄內酯含量對比 (檔名: c358280a5f2741e4b7e551f58e5230d6.png) -->
                 <div class="bg-white rounded-img shadow-img overflow-hidden transform hover:shadow-hover transition-shadow duration-300">
-                    <div class="bg-primary/10 py-3 px-4 text-center font-bold text-secondary text-lg mb-0">醉茄內酯含量對比：傳統萃取 vs 活力得&reg; 專利工藝</div>
-                    <div class="img-hover-zoom"><img class="w-full h-auto" src="https://p11-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/c358280a5f2741e4b7e551f58e5230d6.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260207201723825A27D286EB3C16C118&rrcfp=8a172a1a&x-expires=1771071443&x-signature=vW8p35iqkuowDrzMNo4jSP3LKoQ%3D" alt="傳統萃取vs活力得&reg;專利工藝醉茄內酯含量對比" /></div>
-                    <div class="bg-gray-50 py-2 px-4 text-center text-sm text-gray-600">傳統萃取僅約2-3%，活力得&reg;專利工藝標準化至5%，活性成分提升67%以上</div>
+                    <div class="bg-primary/10 py-3 px-4 text-center font-bold text-secondary text-lg mb-0" data-translate="chart1_title">醉茄內酯含量對比：傳統萃取 vs 活力得&reg; 專利工藝</div>
+                    <div class="img-hover-zoom"><img class="w-full h-auto" src="assets/c358280a5f2741e4b7e551f58e5230d6.png" alt="傳統萃取vs活力得®專利工藝醉茄內酯含量對比" data-translate="chart1_alt"></div>
+                    <div class="bg-gray-50 py-2 px-4 text-center text-sm text-gray-600" data-translate="chart1_caption">傳統萃取僅約2-3%，活力得®專利工藝標準化至5%，活性成分提升67%以上</div>
                 </div>
                 
-                <!-- 圖片5: 皮質醇降低效果 -->
+                <!-- 圖片5: 皮質醇降低效果 (檔名: 1844ab82c399414d899d1d9e497de55a.png) -->
                 <div class="bg-white rounded-img shadow-img overflow-hidden transform hover:shadow-hover transition-shadow duration-300">
-                    <div class="bg-primary/10 py-3 px-4 text-center font-bold text-secondary text-lg mb-0">皮質醇降低效果：安慰劑 vs 活力得&reg; 南非醉茄萃取物</div>
-                    <div class="img-hover-zoom"><img class="w-full h-auto" src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/1844ab82c399414d899d1d9e497de55a.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260207201723825A27D286EB3C16C118&rrcfp=8a172a1a&x-expires=1771071443&x-signature=x4hyK6k4kEFEkN%2B%2Fce%2BvACwdbQ0%3D" alt="安慰劑vs活力得&reg;南非醉茄皮質醇降低效果對比" /></div>
-                    <div class="bg-gray-50 py-2 px-4 text-center text-sm text-gray-600">持續服用8週，活力得&reg;組皮質醇降低28%，睡眠品質提升32%</div>
+                    <div class="bg-primary/10 py-3 px-4 text-center font-bold text-secondary text-lg mb-0" data-translate="chart2_title">皮質醇降低效果：安慰劑 vs 活力得&reg; 南非醉茄萃取物</div>
+                    <div class="img-hover-zoom"><img class="w-full h-auto" src="assets/1844ab82c399414d899d1d9e497de55a.png" alt="安慰劑vs活力得®南非醉茄皮質醇降低效果對比" data-translate="chart2_alt"></div>
+                    <div class="bg-gray-50 py-2 px-4 text-center text-sm text-gray-600" data-translate="chart2_caption">持續服用8週，活力得®組皮質醇降低28%，睡眠品質提升32%</div>
                 </div>
                 
-                <!-- 圖片6: 夜尿次數改善 -->
+                <!-- 圖片6: 夜尿次數改善 (檔名: 8b71ea6ffcb64fca86b8007abbdb6aa8.png) -->
                 <div class="bg-white rounded-img shadow-img overflow-hidden transform hover:shadow-hover transition-shadow duration-300">
-                    <div class="bg-urinary/10 py-3 px-4 text-center font-bold text-urinary text-lg mb-0">夜尿次數改善：安慰劑 vs 活力得&reg; 南非醉茄萃取物（中老年組）</div>
-                    <div class="img-hover-zoom"><img class="w-full h-auto" src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/8b71ea6ffcb64fca86b8007abbdb6aa8.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260207201723825A27D286EB3C16C118&rrcfp=8a172a1a&x-expires=1771071443&x-signature=L4kPIpMaAoy9zvJoGVk8gggxSU0%3D" alt="安慰劑vs活力得&reg;南非醉茄夜尿次數改善對比" /></div>
-                    <div class="bg-gray-50 py-2 px-4 text-center text-sm text-gray-600">持續服用12週，活力得&reg;組夜尿次數降低74%，漏尿發生率降低68%</div>
+                    <div class="bg-urinary/10 py-3 px-4 text-center font-bold text-urinary text-lg mb-0" data-translate="chart3_title">夜尿次數改善：安慰劑 vs 活力得&reg; 南非醉茄萃取物（中老年組）</div>
+                    <div class="img-hover-zoom"><img class="w-full h-auto" src="assets/8b71ea6ffcb64fca86b8007abbdb6aa8.png" alt="安慰劑vs活力得®南非醉茄夜尿次數改善對比" data-translate="chart3_alt"></div>
+                    <div class="bg-gray-50 py-2 px-4 text-center text-sm text-gray-600" data-translate="chart3_caption">持續服用12週，活力得®組夜尿次數降低74%，漏尿發生率降低68%</div>
                 </div>
                 
-                <!-- 圖片7: 腎絲球濾過率 -->
+                <!-- 圖片7: 腎絲球濾過率 (檔名: 424d55cfa65c447fa34fcf0ea003ecab.png) -->
                 <div class="bg-white rounded-img shadow-img overflow-hidden transform hover:shadow-hover transition-shadow duration-300">
-                    <div class="bg-kidney/10 py-3 px-4 text-center font-bold text-kidney text-lg mb-0">腎絲球濾過率（eGFR）提升：活力得&reg; 南非醉茄 vs 對照組</div>
-                    <div class="img-hover-zoom"><img class="w-full h-auto" src="https://p11-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/424d55cfa65c447fa34fcf0ea003ecab.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260207201723825A27D286EB3C16C118&rrcfp=8a172a1a&x-expires=1771071443&x-signature=2IxfhuJVn5aI%2B4x%2B4pjujC9nB2w%3D" alt="活力得&reg;南非醉茄腎絲球濾過率提升效果" /></div>
-                    <div class="bg-gray-50 py-2 px-4 text-center text-sm text-gray-600">持續服用16週，活力得&reg;組腎絲球濾過率提升18%，腎小管重吸收功能優化22%</div>
+                    <div class="bg-kidney/10 py-3 px-4 text-center font-bold text-kidney text-lg mb-0" data-translate="chart4_title">腎絲球濾過率（eGFR）提升：活力得&reg; 南非醉茄 vs 對照組</div>
+                    <div class="img-hover-zoom"><img class="w-full h-auto" src="assets/424d55cfa65c447fa34fcf0ea003ecab.png" alt="活力得®南非醉茄腎絲球濾過率提升效果" data-translate="chart4_alt"></div>
+                    <div class="bg-gray-50 py-2 px-4 text-center text-sm text-gray-600" data-translate="chart4_caption">持續服用16週，活力得®組腎絲球濾過率提升18%，腎小管重吸收功能優化22%</div>
                 </div>
             </div>
             
-            <!-- 機轉卡片網格 -->
+            <!-- 機轉卡片網格 (四大機轉) -->
             <div class="space-y-8 md:space-y-10">
                 <!-- 機轉1：抗壓（皮質醇調控） -->
                 <div class="bg-neutral rounded-card shadow-card p-6 md:p-8 hover:shadow-hover transition-all duration-300">
-                    <h4 class="font-bold text-xl md:text-2xl mb-4 text-secondary">皮質醇降低28%｜有效緩解慢性壓力</h4>
-                    <p class="mb-4 md:mb-6 text-lg"><strong>核心作用機制：</strong>多層次調控HPA軸，抑制過度應激反應</p>
+                    <h4 class="font-bold text-xl md:text-2xl mb-4 text-secondary" data-translate="mech1_title">皮質醇降低28%｜有效緩解慢性壓力</h4>
+                    <p class="mb-4 md:mb-6 text-lg" data-translate="mech1_sub"><strong>核心作用機制：</strong>多層次調控HPA軸，抑制過度應激反應</p>
                     
                     <div class="table-responsive mb-4 md:mb-6">
                         <table class="w-full border-collapse">
                             <thead>
                                 <tr class="bg-primary/10">
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">技術層面</th>
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">分子調控機制</th>
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">直接保健效益</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="table_col1">技術層面</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="table_col2">分子調控機制</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="table_col3">直接保健效益</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium">HPA軸調控</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">醉茄內酯抑制下丘腦-垂體-腎上腺軸過度活化，減少促腎上腺皮質激素（ACTH）分泌</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">皮質醇水平降低28%，緩解焦慮、易怒等壓力症狀</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium" data-translate="mech1_row1_col1">HPA軸調控</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech1_row1_col2">醉茄內酯抑制下丘腦-垂體-腎上腺軸過度活化，減少促腎上腺皮質激素（ACTH）分泌</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech1_row1_col3">皮質醇水平降低28%，緩解焦慮、易怒等壓力症狀</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium">神經遞質平衡</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">提升GABA受體結合率，增加大腦抑制性神經遞質濃度</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">降低交感神經興奮度，提升放鬆感</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium" data-translate="mech1_row2_col1">神經遞質平衡</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech1_row2_col2">提升GABA受體結合率，增加大腦抑制性神經遞質濃度</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech1_row2_col3">降低交感神經興奮度，提升放鬆感</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium">氧化壓力清除</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">提升SOD、GSH-Px等抗氧化酶活性，清除應激產生的自由基</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">保護神經細胞，預防長期壓力導致的認知衰退</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium" data-translate="mech1_row3_col1">氧化壓力清除</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech1_row3_col2">提升SOD、GSH-Px等抗氧化酶活性，清除應激產生的自由基</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech1_row3_col3">保護神經細胞，預防長期壓力導致的認知衰退</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="text-sm md:text-base text-gray-700 italic leading-relaxed">
+                    <div class="text-sm md:text-base text-gray-700 italic leading-relaxed" data-translate="mech1_ref">
                         <strong>科學依據：</strong>《Journal of Alternative and Complementary Medicine》研究表明，標準化南非醉茄萃取物可顯著降低慢性壓力人群的皮質醇水平28%（Choudhary et al., 2017）；醉茄內酯可提升GABA能神經傳導，改善壓力相關焦慮（Phytomedicine, 2020）。
                     </div>
                 </div>
                 
                 <!-- 機轉2：睡眠品質提升 -->
                 <div class="bg-neutral rounded-card shadow-card p-6 md:p-8 hover:shadow-hover transition-all duration-300">
-                    <h4 class="font-bold text-xl md:text-2xl mb-4 text-secondary">睡眠品質提升32%｜延長深層睡眠時間</h4>
-                    <p class="mb-4 md:mb-6 text-lg"><strong>核心作用機制：</strong>調節睡眠-覺醒週期，改善睡眠結構與質量</p>
+                    <h4 class="font-bold text-xl md:text-2xl mb-4 text-secondary" data-translate="mech2_title">睡眠品質提升32%｜延長深層睡眠時間</h4>
+                    <p class="mb-4 md:mb-6 text-lg" data-translate="mech2_sub"><strong>核心作用機制：</strong>調節睡眠-覺醒週期，改善睡眠結構與質量</p>
                     
                     <div class="table-responsive mb-4 md:mb-6">
                         <table class="w-full border-collapse">
                             <thead>
                                 <tr class="bg-primary/10">
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">技術層面</th>
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">分子調控機制</th>
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">直接保健效益</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="table_col1">技術層面</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="table_col2">分子調控機制</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="table_col3">直接保健效益</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium">褪黑素調控</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">醉茄內酯提升松果體褪黑素合成效率，調節晝夜節律</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">入睡潛伏期縮短18%，深層睡眠時間延長22%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium" data-translate="mech2_row1_col1">褪黑素調控</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech2_row1_col2">醉茄內酯提升松果體褪黑素合成效率，調節晝夜節律</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech2_row1_col3">入睡潛伏期縮短18%，深層睡眠時間延長22%</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium">神經興奮性抑制</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">抑制單胺氧化酶（MAO）活性，提升血清素、多巴胺水平</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">減少夜間覺醒次數，提升睡眠連續性</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium" data-translate="mech2_row2_col1">神經興奮性抑制</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech2_row2_col2">抑制單胺氧化酶（MAO）活性，提升血清素、多巴胺水平</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech2_row2_col3">減少夜間覺醒次數，提升睡眠連續性</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium">應激相關失眠改善</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">降低夜間皮質醇峰值，減少壓力性失眠</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">整體睡眠品質評分提升32%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium" data-translate="mech2_row3_col1">應激相關失眠改善</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech2_row3_col2">降低夜間皮質醇峰值，減少壓力性失眠</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech2_row3_col3">整體睡眠品質評分提升32%</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="text-sm md:text-base text-gray-700 italic leading-relaxed">
+                    <div class="text-sm md:text-base text-gray-700 italic leading-relaxed" data-translate="mech2_ref">
                         <strong>科學依據：</strong>標準化南非醉茄萃取物在隨機對照試驗中顯示，可顯著改善睡眠效率與總睡眠時間（Journal of Ethnopharmacology, 2019）；醉茄內酯可調節褪黑素分泌節律，改善輪班工作者的睡眠障礙（Sleep Science, 2021）。
                     </div>
                 </div>
                 
                 <!-- 機轉3：精力與體能提升 -->
                 <div class="bg-neutral rounded-card shadow-card p-6 md:p-8 hover:shadow-hover transition-all duration-300">
-                    <h4 class="font-bold text-xl md:text-2xl mb-4 text-secondary">精力評分提升40%｜增強體能與恢復力</h4>
-                    <p class="mb-4 md:mb-6 text-lg"><strong>核心作用機制：</strong>優化能量代謝，減少疲勞積累，提升肌肉恢復能力</p>
+                    <h4 class="font-bold text-xl md:text-2xl mb-4 text-secondary" data-translate="mech3_title">精力評分提升40%｜增強體能與恢復力</h4>
+                    <p class="mb-4 md:mb-6 text-lg" data-translate="mech3_sub"><strong>核心作用機制：</strong>優化能量代謝，減少疲勞積累，提升肌肉恢復能力</p>
                     
                     <div class="table-responsive mb-4 md:mb-6">
                         <table class="w-full border-collapse">
                             <thead>
                                 <tr class="bg-primary/10">
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">技術層面</th>
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">分子調控機制</th>
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">直接保健效益</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="table_col1">技術層面</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="table_col2">分子調控機制</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="table_col3">直接保健效益</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium">能量代謝優化</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">提升粒線體ATP合成效率，增加細胞能量供應</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">疲勞感評分降低35%，日常活動耐力提升40%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium" data-translate="mech3_row1_col1">能量代謝優化</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech3_row1_col2">提升粒線體ATP合成效率，增加細胞能量供應</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech3_row1_col3">疲勞感評分降低35%，日常活動耐力提升40%</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium">肌肉恢復加速</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">降低運動後肌酸激酶（CK）水平，減少肌肉損傷</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">運動後恢復時間縮短25%，延遲性肌肉酸痛減輕</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium" data-translate="mech3_row2_col1">肌肉恢復加速</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech3_row2_col2">降低運動後肌酸激酶（CK）水平，減少肌肉損傷</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech3_row2_col3">運動後恢復時間縮短25%，延遲性肌肉酸痛減輕</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium">荷爾蒙平衡</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">提升睪酮水平（男性），平衡皮質醇/睪酮比值</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">體力與運動表現提升18%，減少慢性疲勞</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium" data-translate="mech3_row3_col1">荷爾蒙平衡</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech3_row3_col2">提升睪酮水平（男性），平衡皮質醇/睪酮比值</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech3_row3_col3">體力與運動表現提升18%，減少慢性疲勞</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <!-- 圖片8: 精力提升臨床數據 -->
+                    <!-- 圖片8: 精力提升臨床數據 (檔名: 78d1e91aabee40eba06192a1ae76774c.png) -->
                     <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="img-hover-zoom shadow-img">
-                            <img class="w-full h-auto rounded-img" src="https://p11-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/78d1e91aabee40eba06192a1ae76774c.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260207201723825A27D286EB3C16C118&rrcfp=8a172a1a&x-expires=1771071443&x-signature=XLS%2BZe%2FxFNTVWd9HyUeje9d8WuY%3D" alt="活力得®南非醉茄精力提升臨床數據" />
+                            <img class="w-full h-auto rounded-img" src="assets/78d1e91aabee40eba06192a1ae76774c.png" alt="活力得®南非醉茄精力提升臨床數據" data-translate="mech3_img_alt">
                         </div>
-                        <div class="text-sm md:text-base text-gray-700 italic leading-relaxed self-center">
+                        <div class="text-sm md:text-base text-gray-700 italic leading-relaxed self-center" data-translate="mech3_ref">
                             <strong>科學依據：</strong>南非醉茄萃取物可顯著提升運動員的最大攝氧量與耐力表現（Journal of the International Society of Sports Nutrition, 2018）；醉茄內酯可提升男性睪酮水平，改善精力與體能狀態（Andrologia, 2022）。
                         </div>
                     </div>
@@ -408,48 +424,48 @@
                 
                 <!-- 機轉4：泌尿健康&腎絲球功能提升 -->
                 <div class="bg-neutral rounded-card shadow-card p-6 md:p-8 hover:shadow-hover transition-all duration-300">
-                    <h4 class="font-bold text-xl md:text-2xl mb-4 text-secondary">夜尿次數降低74%｜腎絲球濾過率提升18%（中老年專攻）</h4>
-                    <p class="mb-4 md:mb-6 text-lg"><strong>核心作用機制：</strong>雙重調控泌尿系統與腎功能，改善中老年頻尿/漏尿/夜尿，提升腎絲球濾過效率</p>
+                    <h4 class="font-bold text-xl md:text-2xl mb-4 text-secondary" data-translate="mech4_title">夜尿次數降低74%｜腎絲球濾過率提升18%（中老年專攻）</h4>
+                    <p class="mb-4 md:mb-6 text-lg" data-translate="mech4_sub"><strong>核心作用機制：</strong>雙重調控泌尿系統與腎功能，改善中老年頻尿/漏尿/夜尿，提升腎絲球濾過效率</p>
                     
                     <div class="table-responsive mb-4 md:mb-6">
                         <table class="w-full border-collapse">
                             <thead>
                                 <tr class="bg-kidney/10">
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-kidney text-lg">技術層面</th>
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-kidney text-lg">分子調控機制</th>
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-kidney text-lg">直接保健效益</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-kidney text-lg" data-translate="table_col1">技術層面</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-kidney text-lg" data-translate="table_col2">分子調控機制</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-kidney text-lg" data-translate="table_col3">直接保健效益</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="hover:bg-kidney/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium">腎絲球功能保護</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">醉茄內酯抑制腎絲球系膜細胞增殖與氧化損傷，提升足細胞（Podocyte）存活率，增強濾過屏障完整性</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">腎絲球濾過率（eGFR）提升18%，尿微量白蛋白降低31%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium" data-translate="mech4_row1_col1">腎絲球功能保護</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech4_row1_col2">醉茄內酯抑制腎絲球系膜細胞增殖與氧化損傷，提升足細胞（Podocyte）存活率，增強濾過屏障完整性</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech4_row1_col3">腎絲球濾過率（eGFR）提升18%，尿微量白蛋白降低31%</td>
                                 </tr>
                                 <tr class="hover:bg-kidney/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium">膀胱逼尿肌調控</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">調節膀胱平滑肌M3受體表達，抑制過度收縮，提升膀胱容積利用率</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">頻尿次數降低62%，漏尿發生率降低68%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium" data-translate="mech4_row2_col1">膀胱逼尿肌調控</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech4_row2_col2">調節膀胱平滑肌M3受體表達，抑制過度收縮，提升膀胱容積利用率</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech4_row2_col3">頻尿次數降低62%，漏尿發生率降低68%</td>
                                 </tr>
                                 <tr class="hover:bg-kidney/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium">夜間抗利尿調節</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">提升夜間抗利尿激素（ADH）分泌，減少腎小管水分排泄</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">夜尿次數降低74%，夜間排尿量減少58%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium" data-translate="mech4_row3_col1">夜間抗利尿調節</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech4_row3_col2">提升夜間抗利尿激素（ADH）分泌，減少腎小管水分排泄</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech4_row3_col3">夜尿次數降低74%，夜間排尿量減少58%</td>
                                 </tr>
                                 <tr class="hover:bg-kidney/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium">泌尿系統抗炎</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">抑制NF-&kappa;B信號通路，降低泌尿系統慢性炎症因子（TNF-&alpha;/IL-6）水平</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">尿路刺激症狀減輕，排尿不適感降低45%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 font-medium" data-translate="mech4_row4_col1">泌尿系統抗炎</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech4_row4_col2">抑制NF-&kappa;B信號通路，降低泌尿系統慢性炎症因子（TNF-&alpha;/IL-6）水平</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="mech4_row4_col3">尿路刺激症狀減輕，排尿不適感降低45%</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <!-- 圖片9: 泌尿健康臨床驗證 -->
+                    <!-- 圖片9: 泌尿健康臨床驗證 (檔名: 96e6b34562fc4f86b1b4d62d757f803c.png) -->
                     <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="img-hover-zoom shadow-img">
-                            <img class="w-full h-auto rounded-img" src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/96e6b34562fc4f86b1b4d62d757f803c.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260207201723825A27D286EB3C16C118&rrcfp=8a172a1a&x-expires=1771071443&x-signature=16wzsDAJZG4GKmeRp4DyOlkWPF0%3D" alt="活力得®南非醉茄泌尿健康臨床驗證" />
+                            <img class="w-full h-auto rounded-img" src="assets/96e6b34562fc4f86b1b4d62d757f803c.png" alt="活力得®南非醉茄泌尿健康臨床驗證" data-translate="mech4_img_alt">
                         </div>
-                        <div class="text-sm md:text-base text-gray-700 italic leading-relaxed self-center">
+                        <div class="text-sm md:text-base text-gray-700 italic leading-relaxed self-center" data-translate="mech4_ref">
                             <strong>科學依據：</strong>活力得&reg;南非醉茄萃取物在中老年人群隨機對照試驗中，顯著降低夜尿次數74%（Journal of Geriatric Urology, 2023）；醉茄內酯可保護腎絲球足細胞，提升慢性腎損傷模型大鼠的eGFR 18%（Phytotherapy Research, 2024）。
                         </div>
                     </div>
@@ -461,143 +477,143 @@
         <section id="benefit" class="mb-16 md:mb-20">
             <h2 class="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-primary mb-6 md:mb-8 flex items-center">
                 <i class="fa-solid fa-shield-halved mr-3 text-secondary"></i>
-                活力得&reg; 產品效益與安全性｜科學驗證的天然保健選擇
+                <span data-translate="benefit_title">活力得&reg; 產品效益與安全性｜科學驗證的天然保健選擇</span>
             </h2>
             
             <!-- 效益與安全性卡片網格 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-8 md:mb-12">
                 <!-- 保健效益 -->
                 <div class="bg-neutral rounded-card shadow-card p-6 md:p-8 hover:shadow-hover transition-all duration-300">
-                    <h4 class="font-bold text-xl md:text-2xl mb-4 text-secondary">核心保健效益｜臨床驗證結果</h4>
+                    <h4 class="font-bold text-xl md:text-2xl mb-4 text-secondary" data-translate="benefit_table_title">核心保健效益｜臨床驗證結果</h4>
                     <div class="table-responsive mb-6 md:mb-8">
                         <table class="w-full border-collapse">
                             <thead>
                                 <tr class="bg-primary/10">
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">保健指標</th>
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">改善幅度</th>
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">試驗週期</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="benefit_col1">保健指標</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="benefit_col2">改善幅度</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="benefit_col3">試驗週期</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200">壓力評分（PSS-10）</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">&darr; 30%</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">8週</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row1_col1">壓力評分（PSS-10）</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row1_col2">&darr; 30%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row1_col3">8週</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200">睡眠品質（PSQI）</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">&darr; 32%</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">6週</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row2_col1">睡眠品質（PSQI）</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row2_col2">&darr; 32%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row2_col3">6週</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200">精力評分</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">&uarr; 40%</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">4週</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row3_col1">精力評分</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row3_col2">&uarr; 40%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row3_col3">4週</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200">認知靈敏度</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">&uarr; 15%</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">12週</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row4_col1">認知靈敏度</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row4_col2">&uarr; 15%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row4_col3">12週</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 text-urinary font-medium">夜尿次數（中老年）</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200 text-urinary font-medium">&darr; 74%</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">12週</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 text-urinary font-medium" data-translate="benefit_row5_col1">夜尿次數（中老年）</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 text-urinary font-medium" data-translate="benefit_row5_col2">&darr; 74%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row5_col3">12週</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200 text-kidney font-medium">腎絲球濾過率</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200 text-kidney font-medium">&uarr; 18%</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">16週</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 text-kidney font-medium" data-translate="benefit_row6_col1">腎絲球濾過率</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200 text-kidney font-medium" data-translate="benefit_row6_col2">&uarr; 18%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row6_col3">16週</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 font-bold bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200">整體生活品質</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">&uarr; 28%</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">8週</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row7_col1">整體生活品質</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row7_col2">&uarr; 28%</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="benefit_row7_col3">8週</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="bg-primary/10 rounded-base p-4 md:p-6 text-center">
-                        <div class="font-bold mb-1 text-lg">臨床試驗樣本量</div>
-                        <div class="text-3xl md:text-4xl font-black text-accent mb-2">1,200+ 人</div>
-                        <div class="text-sm md:text-base">多中心、隨機、雙盲、安慰劑對照試驗驗證（含600+中老年泌尿問題受試者）</div>
+                        <div class="font-bold mb-1 text-lg" data-translate="trial_label">臨床試驗樣本量</div>
+                        <div class="text-3xl md:text-4xl font-black text-accent mb-2" data-translate="trial_num">1,200+ 人</div>
+                        <div class="text-sm md:text-base" data-translate="trial_desc">多中心、隨機、雙盲、安慰劑對照試驗驗證（含600+中老年泌尿問題受試者）</div>
                     </div>
                 </div>
                 
                 <!-- 安全性數據 -->
                 <div class="bg-neutral rounded-card shadow-card p-6 md:p-8 hover:shadow-hover transition-all duration-300">
-                    <h4 class="font-bold text-xl md:text-2xl mb-4 text-secondary">安全性數據｜長期使用風險評估</h4>
+                    <h4 class="font-bold text-xl md:text-2xl mb-4 text-secondary" data-translate="safety_title">安全性數據｜長期使用風險評估</h4>
                     <div class="table-responsive mb-6 md:mb-8">
                         <table class="w-full border-collapse">
                             <thead>
                                 <tr class="bg-primary/10">
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">評估指標</th>
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">試驗結果</th>
-                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg">安全等級</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="safety_col1">評估指標</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="safety_col2">試驗結果</th>
+                                    <th class="p-3 md:p-4 text-left border-b-2 border-primary text-lg" data-translate="safety_col3">安全等級</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200">肝腎功能指標</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">與安慰劑組無顯著差異</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">極低風險</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row1_col1">肝腎功能指標</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row1_col2">與安慰劑組無顯著差異</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row1_col3">極低風險</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200">不良反應發生率</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">2.3%（輕微胃腸不適）</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">低風險</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row2_col1">不良反應發生率</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row2_col2">2.3%（輕微胃腸不適）</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row2_col3">低風險</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200">長期使用（12個月）</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">無累積毒性</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">安全</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row3_col1">長期使用（12個月）</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row3_col2">無累積毒性</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row3_col3">安全</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200">藥物相互作用</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">與常見藥物無顯著相互作用</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">低風險</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row4_col1">藥物相互作用</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row4_col2">與常見藥物無顯著相互作用</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row4_col3">低風險</td>
                                 </tr>
                                 <tr class="hover:bg-primary/5 font-bold bg-primary/5 transition-colors">
-                                    <td class="p-3 md:p-4 border-b border-gray-200">總體安全性評分</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">4.8/5.0</td>
-                                    <td class="p-3 md:p-4 border-b border-gray-200">優秀</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row5_col1">總體安全性評分</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row5_col2">4.8/5.0</td>
+                                    <td class="p-3 md:p-4 border-b border-gray-200" data-translate="safety_row5_col3">優秀</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="bg-primary/10 rounded-base p-4 md:p-6 text-center">
-                        <div class="font-bold mb-1 text-lg">每日建議安全劑量</div>
-                        <div class="text-3xl md:text-4xl font-black text-accent mb-2">300-600 mg</div>
-                        <div class="text-sm md:text-base">標準化5%醉茄內酯萃取物｜超過1200mg需諮詢專業人士</div>
+                        <div class="font-bold mb-1 text-lg" data-translate="dosage_label">每日建議安全劑量</div>
+                        <div class="text-3xl md:text-4xl font-black text-accent mb-2" data-translate="dosage_value">300-600 mg</div>
+                        <div class="text-sm md:text-base" data-translate="dosage_desc">標準化5%醉茄內酯萃取物｜超過1200mg需諮詢專業人士</div>
                     </div>
                 </div>
             </div>
             
             <!-- 適用人群與禁忌 -->
             <div class="bg-gradient-herb rounded-card p-8 md:p-10 text-center">
-                <div class="text-xl md:text-2xl font-bold mb-6 text-secondary">適用人群與使用禁忌</div>
+                <div class="text-xl md:text-2xl font-bold mb-6 text-secondary" data-translate="target_title">適用人群與使用禁忌</div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
                     <div class="bg-white rounded-base p-6 md:p-8 shadow-card text-left transform hover:shadow-hover transition-shadow duration-300">
-                        <div class="text-lg md:text-xl font-medium mb-3 text-primary">適用人群</div>
+                        <div class="text-lg md:text-xl font-medium mb-3 text-primary" data-translate="target_group">適用人群</div>
                         <ul class="list-disc list-inside space-y-2 text-gray-700 text-base">
-                            <li>慢性壓力、焦慮人群</li>
-                            <li>睡眠品質差、失眠人群</li>
-                            <li>精力不足、慢性疲勞人群</li>
-                            <li>運動健身、追求體能提升人群</li>
-                            <li>中老年荷爾蒙失衡人群</li>
-                            <li class="text-urinary font-medium">中老年頻尿、漏尿、夜尿人群</li>
-                            <li class="text-kidney font-medium">輕中度腎功能減退（eGFR 45-90）人群</li>
+                            <li data-translate="target1">慢性壓力、焦慮人群</li>
+                            <li data-translate="target2">睡眠品質差、失眠人群</li>
+                            <li data-translate="target3">精力不足、慢性疲勞人群</li>
+                            <li data-translate="target4">運動健身、追求體能提升人群</li>
+                            <li data-translate="target5">中老年荷爾蒙失衡人群</li>
+                            <li class="text-urinary font-medium" data-translate="target6">中老年頻尿、漏尿、夜尿人群</li>
+                            <li class="text-kidney font-medium" data-translate="target7">輕中度腎功能減退（eGFR 45-90）人群</li>
                         </ul>
                     </div>
                     <div class="bg-white rounded-base p-6 md:p-8 shadow-card text-left transform hover:shadow-hover transition-shadow duration-300">
-                        <div class="text-lg md:text-xl font-medium mb-3 text-primary">慎用/禁忌人群</div>
+                        <div class="text-lg md:text-xl font-medium mb-3 text-primary" data-translate="caution_group">慎用/禁忌人群</div>
                         <ul class="list-disc list-inside space-y-2 text-gray-700 text-base">
-                            <li>孕婦、哺乳期婦女（需醫師指導）</li>
-                            <li>自體免疫疾病患者</li>
-                            <li>服用鎮靜劑/抗憂鬱藥物人群（需諮詢醫師）</li>
-                            <li>手術前2週（可能增強鎮靜效果）</li>
-                            <li>對茄科植物過敏者</li>
-                            <li class="text-kidney font-medium">重度腎功能衰竭（eGFR &lt; 15）人群（需腎科醫師指導）</li>
+                            <li data-translate="caution1">孕婦、哺乳期婦女（需醫師指導）</li>
+                            <li data-translate="caution2">自體免疫疾病患者</li>
+                            <li data-translate="caution3">服用鎮靜劑/抗憂鬱藥物人群（需諮詢醫師）</li>
+                            <li data-translate="caution4">手術前2週（可能增強鎮靜效果）</li>
+                            <li data-translate="caution5">對茄科植物過敏者</li>
+                            <li class="text-kidney font-medium" data-translate="caution6">重度腎功能衰竭（eGFR &lt; 15）人群（需腎科醫師指導）</li>
                         </ul>
                     </div>
                 </div>
@@ -608,40 +624,40 @@
         <section id="contact" class="mb-16 md:mb-20">
             <h2 class="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-primary mb-6 md:mb-8 flex items-center">
                 <i class="fa-solid fa-address-card mr-3 text-secondary"></i>
-                 - 聯繫我們
+                <span data-translate="contact_title">聯繫我們</span>
             </h2>
             <div class="bg-white rounded-card shadow-card p-8 md:p-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <h3 class="font-bold text-xl mb-4 text-secondary">企業資訊</h3>
+                        <h3 class="font-bold text-xl mb-4 text-secondary" data-translate="contact_info">企業資訊</h3>
                         <ul class="space-y-4 text-lg">
                             <li class="flex items-start">
                                 <i class="fa-solid fa-phone text-primary mt-1 mr-3"></i>
-                                <span>技術專線: </span>
+                                <span data-translate="contact_phone">技術專線: </span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fa-solid fa-envelope text-primary mt-1 mr-3"></i>
-                                <span><a href="mailto:in1000318@gmail.com" class="text-primary hover:underline">@gmail.com</a></span>
+                                <span><a href="mailto:in1000318@gmail.com" class="text-primary hover:underline">in1000318@gmail.com</a></span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fa-solid fa-map-marker-alt text-primary mt-1 mr-3"></i>
-                                <span>台灣省</span>
+                                <span data-translate="contact_address">台灣省</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fa-solid fa-clock text-primary mt-1 mr-3"></i>
-                                <span>服務時間：週一至週五 09:00-18:00</span>
+                                <span data-translate="contact_hours">服務時間：週一至週五 09:00-18:00</span>
                             </li>
                         </ul>
                         
                         <!-- 快速諮詢按鈕 -->
                         <div class="mt-8">
                             <a href="mailto:in1000318@gmail.com" class="inline-block bg-primary text-white px-6 py-3 rounded-base font-bold hover:bg-primary/90 transition-colors transform hover:scale-105 duration-300">
-                                <i class="fa-solid fa-envelope mr-2"></i> 發送諮詢郵件
+                                <i class="fa-solid fa-envelope mr-2"></i> <span data-translate="contact_btn">發送諮詢郵件</span>
                             </a>
                         </div>
                     </div>
                     <div class="img-hover-zoom shadow-img">
-                        <img class="w-full h-auto rounded-img" src="https://p11-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/617f3daef0764cbebe744288663dc3fd.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260207201723825A27D286EB3C16C118&rrcfp=8a172a1a&x-expires=1771071443&x-signature=hNJcSsiM2mfHrb0lTungJDcDwZg%3D" alt="首池有限公司 辦公地址導航" />
+                        <img class="w-full h-auto rounded-img" src="assets/617f3daef0764cbebe744288663dc3fd.png" alt="首池有限公司 辦公地址導航" data-translate="map_alt">
                     </div>
                 </div>
             </div>
@@ -655,7 +671,7 @@
                 <!-- LOGO 與品牌 -->
                 <div class="flex flex-col items-center md:items-start">
                     <img src="assets/logo.png" alt="活力得® 品牌LOGO" class="h-16 w-auto mb-4">
-                    <p class="text-gray-300 text-center md:text-left">
+                    <p class="text-gray-300 text-center md:text-left" data-translate="footer_brand">
                         活力得® 南非醉茄專利萃取精華<br>
                         天然草本保健的黃金標準
                     </p>
@@ -663,21 +679,757 @@
                 
                 <!-- 快速連結 -->
                 <div>
-                    <h4 class="font-bold text-lg mb-4 text-secondary">快速連結</h4>
+                    <h4 class="font-bold text-lg mb-4 text-secondary" data-translate="footer_links">快速連結</h4>
                     <ul class="space-y-2">
-                        <li><a href="#summary" class="text-gray-300 hover:text-white transition-colors">執行摘要</a></li>
-                        <li><a href="#technology" class="text-gray-300 hover:text-white transition-colors">核心技術</a></li>
-                        <li><a href="#mechanism" class="text-gray-300 hover:text-white transition-colors">作用機轉</a></li>
-                        <li><a href="#benefit" class="text-gray-300 hover:text-white transition-colors">效益與安全</a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">聯繫我們</a></li>
+                        <li><a href="#summary" class="text-gray-300 hover:text-white transition-colors" data-translate="footer_summary">執行摘要</a></li>
+                        <li><a href="#technology" class="text-gray-300 hover:text-white transition-colors" data-translate="footer_tech">核心技術</a></li>
+                        <li><a href="#mechanism" class="text-gray-300 hover:text-white transition-colors" data-translate="footer_mechanism">作用機轉</a></li>
+                        <li><a href="#benefit" class="text-gray-300 hover:text-white transition-colors" data-translate="footer_benefit">效益與安全</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors" data-translate="footer_contact">聯繫我們</a></li>
                     </ul>
                 </div>
                 
                 <!-- 法律資訊 -->
                 <div>
-                    <h4 class="font-bold text-lg mb-4 text-secondary">法律資訊</h4>
+                    <h4 class="font-bold text-lg mb-4 text-secondary" data-translate="footer_legal">法律資訊</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">隱私政策</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">使用條款</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">免責聲明</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">專利證明
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors" data-translate="footer_privacy">隱私政策</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors" data-translate="footer_terms">使用條款</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors" data-translate="footer_disclaimer">免責聲明</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors" data-translate="footer_patent">專利證明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 text-sm pt-6 border-t border-gray-700" data-translate="footer_copyright">
+                © 2026 活力得® 版權所有
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回頂部按鈕 -->
+    <div class="back-to-top fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg cursor-pointer opacity-0 invisible transition-all duration-300 hover:bg-secondary z-50" id="backToTop">
+        <i class="fa-solid fa-arrow-up text-xl"></i>
+    </div>
+
+    <script>
+        // ========== 多語言翻譯物件 ==========
+        const translations = {
+            'zh-TW': {
+                'brand_name': '活力得®',
+                'nav_summary': '執行摘要',
+                'nav_tech': '核心技術',
+                'nav_mechanism': '作用機轉',
+                'nav_benefit': '效益與安全',
+                'nav_contact': '聯繫我們',
+                'banner_alt': '活力得® 南非醉茄有機種植與萃取工藝',
+                'banner_title': '活力得® 南非醉茄（Ashwagandha）專利萃取精華',
+                'banner_subtitle': '技術數據表（TDS）｜標準化5%醉茄內酯 · 超臨界CO₂萃取 · 高生物利用度<br class="md:hidden" /> 【專攻中老年泌尿健康】頻尿/漏尿/夜尿改善 · 腎絲球功能提升',
+                'banner_footer': '活力得® 天然草本保健 © 2026',
+                'summary_title': '執行摘要：活力得® 核心價值與關鍵指標',
+                'summary_desc': '<strong class="text-secondary">核心定位：</strong>基於專利超臨界CO₂萃取技術與生物轉化工藝，標準化提取南非醉茄（Withania somnifera）根部活性成分，針對現代人壓力、睡眠、精力不足等核心痛點，同時專攻中老年泌尿健康問題（頻尿/漏尿/夜尿），提升腎絲球濾過功能，實現多維度天然草本保健「黃金標準」。',
+                'card1_title': '醉茄內酯含量',
+                'card1_comp': '傳統萃取 2-3% → 標準化 5%',
+                'card1_value': '↑ 67-150%',
+                'card1_desc': '顯著提升活性成分濃度',
+                'card2_title': '生物利用度',
+                'card2_comp': '普通粉末 15% → 微囊化 45%',
+                'card2_value': '↑ 200%',
+                'card2_desc': '大幅提升人體吸收效率',
+                'card3_title': '應激激素（皮質醇）',
+                'card3_comp': '基線 → 降低 28%',
+                'card3_value': '↓ 28%',
+                'card3_desc': '有效緩解慢性壓力',
+                'card4_title': '夜尿次數',
+                'card4_comp': '基線 4.2次 → 改善後 1.1次',
+                'card4_value': '↓ 74%',
+                'card4_desc': '中老年夜尿頻繁顯著改善',
+                'card5_title': '腎絲球濾過率（eGFR）',
+                'card5_comp': '基線 → 提升 18%',
+                'card5_value': '↑ 18%',
+                'card5_desc': '腎功能核心指標優化',
+                'highlight_num': '98.7%',
+                'highlight_text': '活性成分保留率',
+                'highlight_badge1': '無溶劑殘留',
+                'highlight_badge2': '符合國際有機認證',
+                'highlight_badge3': '中老年泌尿健康專攻',
+                'tech_title': '活力得® 南非醉茄核心萃取技術架構',
+                'tech_desc1': '<strong class="text-secondary">三層協同萃取工藝｜</strong>精準保留南非醉茄活性成分與生物活性',
+                'tech_sub1': '超臨界CO₂萃取',
+                'tech_sub1_desc': '低溫無溶劑，保留98%+活性成分，避免熱敏性成分破壞',
+                'tech_sub2': '生物轉化技術',
+                'tech_sub2_desc': '透過微生物發酵技術，提升醉茄內酯生物利用度200%',
+                'tech_sub3': '微囊化包埋',
+                'tech_sub3_desc': '保護活性成分不被胃酸破壞，確保達到腸道有效吸收',
+                'tech_dosage': '※ 建議每日劑量：500mg（含5%醉茄內酯），隨餐服用，1~3天/次',
+                'tech_note': '工藝為商業機密，基於專利萃取平台與國際前沿草本技術研發<br>生產車間符合GMP/GACP國際認證標準',
+                'tech_img_alt': '活力得® 南非醉茄三層協同萃取工藝',
+                'organic_title': '有機種植與原料品質管控',
+                'organic_img_alt': '南非醉茄有機種植基地',
+                'organic_desc': '活力得®南非醉茄原料來自印度拉賈斯坦邦有機認證種植基地，遠離工業污染，採用自然農法種植，確保原料無農藥殘留、重金屬符合國際標準。',
+                'organic_bullet1': '原料通過ISO 17025實驗室檢測，重金屬（鉛/汞/砷/鎘）含量低於國際限量標準',
+                'organic_bullet2': '農藥殘留檢測：0檢出（覆蓋200+常見農藥項目）',
+                'organic_bullet3': '微生物指標：總菌落數 < 100 CFU/g，大腸桿菌/沙門氏菌/黴菌 均未檢出',
+                'organic_bullet4': '原料採收後48小時內完成初加工，確保新鮮度與活性成分保留',
+                'mechanism_title': '活力得® 南非醉茄四大核心作用機轉',
+                'chart1_title': '醉茄內酯含量對比：傳統萃取 vs 活力得® 專利工藝',
+                'chart1_alt': '傳統萃取vs活力得®專利工藝醉茄內酯含量對比',
+                'chart1_caption': '傳統萃取僅約2-3%，活力得®專利工藝標準化至5%，活性成分提升67%以上',
+                'chart2_title': '皮質醇降低效果：安慰劑 vs 活力得® 南非醉茄萃取物',
+                'chart2_alt': '安慰劑vs活力得®南非醉茄皮質醇降低效果對比',
+                'chart2_caption': '持續服用8週，活力得®組皮質醇降低28%，睡眠品質提升32%',
+                'chart3_title': '夜尿次數改善：安慰劑 vs 活力得® 南非醉茄萃取物（中老年組）',
+                'chart3_alt': '安慰劑vs活力得®南非醉茄夜尿次數改善對比',
+                'chart3_caption': '持續服用12週，活力得®組夜尿次數降低74%，漏尿發生率降低68%',
+                'chart4_title': '腎絲球濾過率（eGFR）提升：活力得® 南非醉茄 vs 對照組',
+                'chart4_alt': '活力得®南非醉茄腎絲球濾過率提升效果',
+                'chart4_caption': '持續服用16週，活力得®組腎絲球濾過率提升18%，腎小管重吸收功能優化22%',
+                'table_col1': '技術層面',
+                'table_col2': '分子調控機制',
+                'table_col3': '直接保健效益',
+                'mech1_title': '皮質醇降低28%｜有效緩解慢性壓力',
+                'mech1_sub': '<strong>核心作用機制：</strong>多層次調控HPA軸，抑制過度應激反應',
+                'mech1_row1_col1': 'HPA軸調控',
+                'mech1_row1_col2': '醉茄內酯抑制下丘腦-垂體-腎上腺軸過度活化，減少促腎上腺皮質激素（ACTH）分泌',
+                'mech1_row1_col3': '皮質醇水平降低28%，緩解焦慮、易怒等壓力症狀',
+                'mech1_row2_col1': '神經遞質平衡',
+                'mech1_row2_col2': '提升GABA受體結合率，增加大腦抑制性神經遞質濃度',
+                'mech1_row2_col3': '降低交感神經興奮度，提升放鬆感',
+                'mech1_row3_col1': '氧化壓力清除',
+                'mech1_row3_col2': '提升SOD、GSH-Px等抗氧化酶活性，清除應激產生的自由基',
+                'mech1_row3_col3': '保護神經細胞，預防長期壓力導致的認知衰退',
+                'mech1_ref': '<strong>科學依據：</strong>《Journal of Alternative and Complementary Medicine》研究表明，標準化南非醉茄萃取物可顯著降低慢性壓力人群的皮質醇水平28%（Choudhary et al., 2017）；醉茄內酯可提升GABA能神經傳導，改善壓力相關焦慮（Phytomedicine, 2020）。',
+                'mech2_title': '睡眠品質提升32%｜延長深層睡眠時間',
+                'mech2_sub': '<strong>核心作用機制：</strong>調節睡眠-覺醒週期，改善睡眠結構與質量',
+                'mech2_row1_col1': '褪黑素調控',
+                'mech2_row1_col2': '醉茄內酯提升松果體褪黑素合成效率，調節晝夜節律',
+                'mech2_row1_col3': '入睡潛伏期縮短18%，深層睡眠時間延長22%',
+                'mech2_row2_col1': '神經興奮性抑制',
+                'mech2_row2_col2': '抑制單胺氧化酶（MAO）活性，提升血清素、多巴胺水平',
+                'mech2_row2_col3': '減少夜間覺醒次數，提升睡眠連續性',
+                'mech2_row3_col1': '應激相關失眠改善',
+                'mech2_row3_col2': '降低夜間皮質醇峰值，減少壓力性失眠',
+                'mech2_row3_col3': '整體睡眠品質評分提升32%',
+                'mech2_ref': '<strong>科學依據：</strong>標準化南非醉茄萃取物在隨機對照試驗中顯示，可顯著改善睡眠效率與總睡眠時間（Journal of Ethnopharmacology, 2019）；醉茄內酯可調節褪黑素分泌節律，改善輪班工作者的睡眠障礙（Sleep Science, 2021）。',
+                'mech3_title': '精力評分提升40%｜增強體能與恢復力',
+                'mech3_sub': '<strong>核心作用機制：</strong>優化能量代謝，減少疲勞積累，提升肌肉恢復能力',
+                'mech3_row1_col1': '能量代謝優化',
+                'mech3_row1_col2': '提升粒線體ATP合成效率，增加細胞能量供應',
+                'mech3_row1_col3': '疲勞感評分降低35%，日常活動耐力提升40%',
+                'mech3_row2_col1': '肌肉恢復加速',
+                'mech3_row2_col2': '降低運動後肌酸激酶（CK）水平，減少肌肉損傷',
+                'mech3_row2_col3': '運動後恢復時間縮短25%，延遲性肌肉酸痛減輕',
+                'mech3_row3_col1': '荷爾蒙平衡',
+                'mech3_row3_col2': '提升睪酮水平（男性），平衡皮質醇/睪酮比值',
+                'mech3_row3_col3': '體力與運動表現提升18%，減少慢性疲勞',
+                'mech3_img_alt': '活力得®南非醉茄精力提升臨床數據',
+                'mech3_ref': '<strong>科學依據：</strong>南非醉茄萃取物可顯著提升運動員的最大攝氧量與耐力表現（Journal of the International Society of Sports Nutrition, 2018）；醉茄內酯可提升男性睪酮水平，改善精力與體能狀態（Andrologia, 2022）。',
+                'mech4_title': '夜尿次數降低74%｜腎絲球濾過率提升18%（中老年專攻）',
+                'mech4_sub': '<strong>核心作用機制：</strong>雙重調控泌尿系統與腎功能，改善中老年頻尿/漏尿/夜尿，提升腎絲球濾過效率',
+                'mech4_row1_col1': '腎絲球功能保護',
+                'mech4_row1_col2': '醉茄內酯抑制腎絲球系膜細胞增殖與氧化損傷，提升足細胞（Podocyte）存活率，增強濾過屏障完整性',
+                'mech4_row1_col3': '腎絲球濾過率（eGFR）提升18%，尿微量白蛋白降低31%',
+                'mech4_row2_col1': '膀胱逼尿肌調控',
+                'mech4_row2_col2': '調節膀胱平滑肌M3受體表達，抑制過度收縮，提升膀胱容積利用率',
+                'mech4_row2_col3': '頻尿次數降低62%，漏尿發生率降低68%',
+                'mech4_row3_col1': '夜間抗利尿調節',
+                'mech4_row3_col2': '提升夜間抗利尿激素（ADH）分泌，減少腎小管水分排泄',
+                'mech4_row3_col3': '夜尿次數降低74%，夜間排尿量減少58%',
+                'mech4_row4_col1': '泌尿系統抗炎',
+                'mech4_row4_col2': '抑制NF-κB信號通路，降低泌尿系統慢性炎症因子（TNF-α/IL-6）水平',
+                'mech4_row4_col3': '尿路刺激症狀減輕，排尿不適感降低45%',
+                'mech4_img_alt': '活力得®南非醉茄泌尿健康臨床驗證',
+                'mech4_ref': '<strong>科學依據：</strong>活力得®南非醉茄萃取物在中老年人群隨機對照試驗中，顯著降低夜尿次數74%（Journal of Geriatric Urology, 2023）；醉茄內酯可保護腎絲球足細胞，提升慢性腎損傷模型大鼠的eGFR 18%（Phytotherapy Research, 2024）。',
+                'benefit_title': '活力得® 產品效益與安全性｜科學驗證的天然保健選擇',
+                'benefit_table_title': '核心保健效益｜臨床驗證結果',
+                'benefit_col1': '保健指標',
+                'benefit_col2': '改善幅度',
+                'benefit_col3': '試驗週期',
+                'benefit_row1_col1': '壓力評分（PSS-10）',
+                'benefit_row1_col2': '↓ 30%',
+                'benefit_row1_col3': '8週',
+                'benefit_row2_col1': '睡眠品質（PSQI）',
+                'benefit_row2_col2': '↓ 32%',
+                'benefit_row2_col3': '6週',
+                'benefit_row3_col1': '精力評分',
+                'benefit_row3_col2': '↑ 40%',
+                'benefit_row3_col3': '4週',
+                'benefit_row4_col1': '認知靈敏度',
+                'benefit_row4_col2': '↑ 15%',
+                'benefit_row4_col3': '12週',
+                'benefit_row5_col1': '夜尿次數（中老年）',
+                'benefit_row5_col2': '↓ 74%',
+                'benefit_row5_col3': '12週',
+                'benefit_row6_col1': '腎絲球濾過率',
+                'benefit_row6_col2': '↑ 18%',
+                'benefit_row6_col3': '16週',
+                'benefit_row7_col1': '整體生活品質',
+                'benefit_row7_col2': '↑ 28%',
+                'benefit_row7_col3': '8週',
+                'trial_label': '臨床試驗樣本量',
+                'trial_num': '1,200+ 人',
+                'trial_desc': '多中心、隨機、雙盲、安慰劑對照試驗驗證（含600+中老年泌尿問題受試者）',
+                'safety_title': '安全性數據｜長期使用風險評估',
+                'safety_col1': '評估指標',
+                'safety_col2': '試驗結果',
+                'safety_col3': '安全等級',
+                'safety_row1_col1': '肝腎功能指標',
+                'safety_row1_col2': '與安慰劑組無顯著差異',
+                'safety_row1_col3': '極低風險',
+                'safety_row2_col1': '不良反應發生率',
+                'safety_row2_col2': '2.3%（輕微胃腸不適）',
+                'safety_row2_col3': '低風險',
+                'safety_row3_col1': '長期使用（12個月）',
+                'safety_row3_col2': '無累積毒性',
+                'safety_row3_col3': '安全',
+                'safety_row4_col1': '藥物相互作用',
+                'safety_row4_col2': '與常見藥物無顯著相互作用',
+                'safety_row4_col3': '低風險',
+                'safety_row5_col1': '總體安全性評分',
+                'safety_row5_col2': '4.8/5.0',
+                'safety_row5_col3': '優秀',
+                'dosage_label': '每日建議安全劑量',
+                'dosage_value': '300-600 mg',
+                'dosage_desc': '標準化5%醉茄內酯萃取物｜超過1200mg需諮詢專業人士',
+                'target_title': '適用人群與使用禁忌',
+                'target_group': '適用人群',
+                'target1': '慢性壓力、焦慮人群',
+                'target2': '睡眠品質差、失眠人群',
+                'target3': '精力不足、慢性疲勞人群',
+                'target4': '運動健身、追求體能提升人群',
+                'target5': '中老年荷爾蒙失衡人群',
+                'target6': '中老年頻尿、漏尿、夜尿人群',
+                'target7': '輕中度腎功能減退（eGFR 45-90）人群',
+                'caution_group': '慎用/禁忌人群',
+                'caution1': '孕婦、哺乳期婦女（需醫師指導）',
+                'caution2': '自體免疫疾病患者',
+                'caution3': '服用鎮靜劑/抗憂鬱藥物人群（需諮詢醫師）',
+                'caution4': '手術前2週（可能增強鎮靜效果）',
+                'caution5': '對茄科植物過敏者',
+                'caution6': '重度腎功能衰竭（eGFR < 15）人群（需腎科醫師指導）',
+                'contact_title': '聯繫我們',
+                'contact_info': '企業資訊',
+                'contact_phone': '技術專線: ',
+                'contact_address': '台灣省',
+                'contact_hours': '服務時間：週一至週五 09:00-18:00',
+                'contact_btn': '發送諮詢郵件',
+                'map_alt': '首池有限公司 辦公地址導航',
+                'footer_brand': '活力得® 南非醉茄專利萃取精華<br>天然草本保健的黃金標準',
+                'footer_links': '快速連結',
+                'footer_summary': '執行摘要',
+                'footer_tech': '核心技術',
+                'footer_mechanism': '作用機轉',
+                'footer_benefit': '效益與安全',
+                'footer_contact': '聯繫我們',
+                'footer_legal': '法律資訊',
+                'footer_privacy': '隱私政策',
+                'footer_terms': '使用條款',
+                'footer_disclaimer': '免責聲明',
+                'footer_patent': '專利證明',
+                'footer_copyright': '© 2026 活力得® 版權所有'
+            },
+            'zh-CN': {
+                // 簡體中文翻譯 (此處僅提供簡體版本，為節省篇幅，實際應用時可複製繁體後轉換，這裡簡要列出部分)
+                'brand_name': '活力得®',
+                'nav_summary': '执行摘要',
+                'nav_tech': '核心技术',
+                'nav_mechanism': '作用机转',
+                'nav_benefit': '效益与安全',
+                'nav_contact': '联系我们',
+                'banner_alt': '活力得® 南非醉茄有机种植与萃取工艺',
+                'banner_title': '活力得® 南非醉茄（Ashwagandha）专利萃取精华',
+                'banner_subtitle': '技术数据表（TDS）｜标准化5%醉茄内酯 · 超临界CO₂萃取 · 高生物利用度<br class="md:hidden" /> 【专攻中老年泌尿健康】频尿/漏尿/夜尿改善 · 肾丝球功能提升',
+                'banner_footer': '活力得® 天然草本保健 © 2026',
+                'summary_title': '执行摘要：活力得® 核心价值与关键指标',
+                'summary_desc': '<strong class="text-secondary">核心定位：</strong>基于专利超临界CO₂萃取技术与生物转化工艺，标准化提取南非醉茄（Withania somnifera）根部活性成分，针对现代人压力、睡眠、精力不足等核心痛点，同时专攻中老年泌尿健康问题（频尿/漏尿/夜尿），提升肾丝球滤过功能，实现多维度天然草本保健「黄金标准」。',
+                'card1_title': '醉茄内酯含量',
+                'card1_comp': '传统萃取 2-3% → 标准化 5%',
+                'card1_value': '↑ 67-150%',
+                'card1_desc': '显著提升活性成分浓度',
+                'card2_title': '生物利用度',
+                'card2_comp': '普通粉末 15% → 微囊化 45%',
+                'card2_value': '↑ 200%',
+                'card2_desc': '大幅提升人体吸收效率',
+                'card3_title': '应激激素（皮质醇）',
+                'card3_comp': '基线 → 降低 28%',
+                'card3_value': '↓ 28%',
+                'card3_desc': '有效缓解慢性压力',
+                'card4_title': '夜尿次数',
+                'card4_comp': '基线 4.2次 → 改善后 1.1次',
+                'card4_value': '↓ 74%',
+                'card4_desc': '中老年夜尿频繁显著改善',
+                'card5_title': '肾丝球滤过率（eGFR）',
+                'card5_comp': '基线 → 提升 18%',
+                'card5_value': '↑ 18%',
+                'card5_desc': '肾功能核心指标优化',
+                'highlight_num': '98.7%',
+                'highlight_text': '活性成分保留率',
+                'highlight_badge1': '无溶剂残留',
+                'highlight_badge2': '符合国际有机认证',
+                'highlight_badge3': '中老年泌尿健康专攻',
+                'tech_title': '活力得® 南非醉茄核心萃取技术架构',
+                'tech_desc1': '<strong class="text-secondary">三层协同萃取工艺｜</strong>精准保留南非醉茄活性成分与生物活性',
+                'tech_sub1': '超临界CO₂萃取',
+                'tech_sub1_desc': '低温无溶剂，保留98%+活性成分，避免热敏性成分破坏',
+                'tech_sub2': '生物转化技术',
+                'tech_sub2_desc': '透过微生物发酵技术，提升醉茄内酯生物利用度200%',
+                'tech_sub3': '微囊化包埋',
+                'tech_sub3_desc': '保护活性成分不被胃酸破坏，确保达到肠道有效吸收',
+                'tech_dosage': '※ 建议每日剂量：500mg（含5%醉茄内酯），随餐服用，1~3天/次',
+                'tech_note': '工艺为商业机密，基于专利萃取平台与国际前沿草本技术研发<br>生产车间符合GMP/GACP国际认证标准',
+                'tech_img_alt': '活力得® 南非醉茄三层协同萃取工艺',
+                'organic_title': '有机种植与原料品质管控',
+                'organic_img_alt': '南非醉茄有机种植基地',
+                'organic_desc': '活力得®南非醉茄原料来自印度拉贾斯坦邦有机认证种植基地，远离工业污染，采用自然农法种植，确保原料无农药残留、重金属符合国际标准。',
+                'organic_bullet1': '原料通过ISO 17025实验室检测，重金属（铅/汞/砷/镉）含量低于国际限量标准',
+                'organic_bullet2': '农药残留检测：0检出（覆盖200+常见农药项目）',
+                'organic_bullet3': '微生物指标：总菌落数 < 100 CFU/g，大肠杆菌/沙门氏菌/霉菌 均未检出',
+                'organic_bullet4': '原料采收后48小时内完成初加工，确保新鲜度与活性成分保留',
+                'mechanism_title': '活力得® 南非醉茄四大核心作用机转',
+                'chart1_title': '醉茄内酯含量对比：传统萃取 vs 活力得® 专利工艺',
+                'chart1_alt': '传统萃取vs活力得®专利工艺醉茄内酯含量对比',
+                'chart1_caption': '传统萃取仅约2-3%，活力得®专利工艺标准化至5%，活性成分提升67%以上',
+                'chart2_title': '皮质醇降低效果：安慰剂 vs 活力得® 南非醉茄萃取物',
+                'chart2_alt': '安慰剂vs活力得®南非醉茄皮质醇降低效果对比',
+                'chart2_caption': '持续服用8周，活力得®组皮质醇降低28%，睡眠品质提升32%',
+                'chart3_title': '夜尿次数改善：安慰剂 vs 活力得® 南非醉茄萃取物（中老年组）',
+                'chart3_alt': '安慰剂vs活力得®南非醉茄夜尿次数改善对比',
+                'chart3_caption': '持续服用12周，活力得®组夜尿次数降低74%，漏尿发生率降低68%',
+                'chart4_title': '肾丝球滤过率（eGFR）提升：活力得® 南非醉茄 vs 对照组',
+                'chart4_alt': '活力得®南非醉茄肾丝球滤过率提升效果',
+                'chart4_caption': '持续服用16周，活力得®组肾丝球滤过率提升18%，肾小管重吸收功能优化22%',
+                'table_col1': '技术层面',
+                'table_col2': '分子调控机制',
+                'table_col3': '直接保健效益',
+                'mech1_title': '皮质醇降低28%｜有效缓解慢性压力',
+                'mech1_sub': '<strong>核心作用机制：</strong>多层次调控HPA轴，抑制过度应激反应',
+                'mech1_row1_col1': 'HPA轴调控',
+                'mech1_row1_col2': '醉茄内酯抑制下丘脑-垂体-肾上腺轴过度活化，减少促肾上腺皮质激素（ACTH）分泌',
+                'mech1_row1_col3': '皮质醇水平降低28%，缓解焦虑、易怒等压力症状',
+                'mech1_row2_col1': '神经递质平衡',
+                'mech1_row2_col2': '提升GABA受体结合率，增加大脑抑制性神经递质浓度',
+                'mech1_row2_col3': '降低交感神经兴奋度，提升放松感',
+                'mech1_row3_col1': '氧化压力清除',
+                'mech1_row3_col2': '提升SOD、GSH-Px等抗氧化酶活性，清除应激产生的自由基',
+                'mech1_row3_col3': '保护神经细胞，预防长期压力导致的认知衰退',
+                'mech1_ref': '<strong>科学依据：</strong>《Journal of Alternative and Complementary Medicine》研究表明，标准化南非醉茄萃取物可显著降低慢性压力人群的皮质醇水平28%（Choudhary et al., 2017）；醉茄内酯可提升GABA能神经传导，改善压力相关焦虑（Phytomedicine, 2020）。',
+                'mech2_title': '睡眠品质提升32%｜延长深层睡眠时间',
+                'mech2_sub': '<strong>核心作用机制：</strong>调节睡眠-觉醒周期，改善睡眠结构与质量',
+                'mech2_row1_col1': '褪黑素调控',
+                'mech2_row1_col2': '醉茄内酯提升松果体褪黑素合成效率，调节昼夜节律',
+                'mech2_row1_col3': '入睡潜伏期缩短18%，深层睡眠时间延长22%',
+                'mech2_row2_col1': '神经兴奋性抑制',
+                'mech2_row2_col2': '抑制单胺氧化酶（MAO）活性，提升血清素、多巴胺水平',
+                'mech2_row2_col3': '减少夜间觉醒次数，提升睡眠连续性',
+                'mech2_row3_col1': '应激相关失眠改善',
+                'mech2_row3_col2': '降低夜间皮质醇峰值，减少压力性失眠',
+                'mech2_row3_col3': '整体睡眠品质评分提升32%',
+                'mech2_ref': '<strong>科学依据：</strong>标准化南非醉茄萃取物在随机对照试验中显示，可显著改善睡眠效率与总睡眠时间（Journal of Ethnopharmacology, 2019）；醉茄内酯可调节褪黑素分泌节律，改善轮班工作者的睡眠障碍（Sleep Science, 2021）。',
+                'mech3_title': '精力评分提升40%｜增强体能恢复力',
+                'mech3_sub': '<strong>核心作用机制：</strong>优化能量代谢，减少疲劳积累，提升肌肉恢复能力',
+                'mech3_row1_col1': '能量代谢优化',
+                'mech3_row1_col2': '提升粒线体ATP合成效率，增加细胞能量供应',
+                'mech3_row1_col3': '疲劳感评分降低35%，日常活动耐力提升40%',
+                'mech3_row2_col1': '肌肉恢复加速',
+                'mech3_row2_col2': '降低运动后肌酸激酶（CK）水平，减少肌肉损伤',
+                'mech3_row2_col3': '运动后恢复时间缩短25%，延迟性肌肉酸痛减轻',
+                'mech3_row3_col1': '荷尔蒙平衡',
+                'mech3_row3_col2': '提升睾酮水平（男性），平衡皮质醇/睾酮比值',
+                'mech3_row3_col3': '体力与运动表现提升18%，减少慢性疲劳',
+                'mech3_img_alt': '活力得®南非醉茄精力提升临床数据',
+                'mech3_ref': '<strong>科学依据：</strong>南非醉茄萃取物可显著提升运动员的最大摄氧量与耐力表现（Journal of the International Society of Sports Nutrition, 2018）；醉茄内酯可提升男性睾酮水平，改善精力与体能状态（Andrologia, 2022）。',
+                'mech4_title': '夜尿次数降低74%｜肾丝球滤过率提升18%（中老年专攻）',
+                'mech4_sub': '<strong>核心作用机制：</strong>双重调控泌尿系统与肾功能，改善中老年频尿/漏尿/夜尿，提升肾丝球滤过效率',
+                'mech4_row1_col1': '肾丝球功能保护',
+                'mech4_row1_col2': '醉茄内酯抑制肾丝球系膜细胞增殖与氧化损伤，提升足细胞（Podocyte）存活率，增强滤过屏障完整性',
+                'mech4_row1_col3': '肾丝球滤过率（eGFR）提升18%，尿微量白蛋白降低31%',
+                'mech4_row2_col1': '膀胱逼尿肌调控',
+                'mech4_row2_col2': '调节膀胱平滑肌M3受体表达，抑制过度收缩，提升膀胱容积利用率',
+                'mech4_row2_col3': '频尿次数降低62%，漏尿发生率降低68%',
+                'mech4_row3_col1': '夜间抗利尿调节',
+                'mech4_row3_col2': '提升夜间抗利尿激素（ADH）分泌，减少肾小管水分排泄',
+                'mech4_row3_col3': '夜尿次数降低74%，夜间排尿量减少58%',
+                'mech4_row4_col1': '泌尿系统抗炎',
+                'mech4_row4_col2': '抑制NF-κB信号通路，降低泌尿系统慢性炎症因子（TNF-α/IL-6）水平',
+                'mech4_row4_col3': '尿路刺激症状减轻，排尿不适感降低45%',
+                'mech4_img_alt': '活力得®南非醉茄泌尿健康临床验证',
+                'mech4_ref': '<strong>科学依据：</strong>活力得®南非醉茄萃取物在中老年人群随机对照试验中，显著降低夜尿次数74%（Journal of Geriatric Urology, 2023）；醉茄内酯可保护肾丝球足细胞，提升慢性肾损伤模型大鼠的eGFR 18%（Phytotherapy Research, 2024）。',
+                'benefit_title': '活力得® 产品效益与安全性｜科学验证的天然保健选择',
+                'benefit_table_title': '核心保健效益｜临床验证结果',
+                'benefit_col1': '保健指标',
+                'benefit_col2': '改善幅度',
+                'benefit_col3': '试验周期',
+                'benefit_row1_col1': '压力评分（PSS-10）',
+                'benefit_row1_col2': '↓ 30%',
+                'benefit_row1_col3': '8周',
+                'benefit_row2_col1': '睡眠品质（PSQI）',
+                'benefit_row2_col2': '↓ 32%',
+                'benefit_row2_col3': '6周',
+                'benefit_row3_col1': '精力评分',
+                'benefit_row3_col2': '↑ 40%',
+                'benefit_row3_col3': '4周',
+                'benefit_row4_col1': '认知灵敏度',
+                'benefit_row4_col2': '↑ 15%',
+                'benefit_row4_col3': '12周',
+                'benefit_row5_col1': '夜尿次数（中老年）',
+                'benefit_row5_col2': '↓ 74%',
+                'benefit_row5_col3': '12周',
+                'benefit_row6_col1': '肾丝球滤过率',
+                'benefit_row6_col2': '↑ 18%',
+                'benefit_row6_col3': '16周',
+                'benefit_row7_col1': '整体生活品质',
+                'benefit_row7_col2': '↑ 28%',
+                'benefit_row7_col3': '8周',
+                'trial_label': '临床试验样本量',
+                'trial_num': '1,200+ 人',
+                'trial_desc': '多中心、随机、双盲、安慰剂对照试验验证（含600+中老年泌尿问题受试者）',
+                'safety_title': '安全性数据｜长期使用风险评估',
+                'safety_col1': '评估指标',
+                'safety_col2': '试验结果',
+                'safety_col3': '安全等级',
+                'safety_row1_col1': '肝肾功能指标',
+                'safety_row1_col2': '与安慰剂组无显著差异',
+                'safety_row1_col3': '极低风险',
+                'safety_row2_col1': '不良反应发生率',
+                'safety_row2_col2': '2.3%（轻微胃肠不适）',
+                'safety_row2_col3': '低风险',
+                'safety_row3_col1': '长期使用（12个月）',
+                'safety_row3_col2': '无累积毒性',
+                'safety_row3_col3': '安全',
+                'safety_row4_col1': '药物相互作用',
+                'safety_row4_col2': '与常见药物无显著相互作用',
+                'safety_row4_col3': '低风险',
+                'safety_row5_col1': '总体安全性评分',
+                'safety_row5_col2': '4.8/5.0',
+                'safety_row5_col3': '优秀',
+                'dosage_label': '每日建议安全剂量',
+                'dosage_value': '300-600 mg',
+                'dosage_desc': '标准化5%醉茄内酯萃取物｜超过1200mg需咨询专业人士',
+                'target_title': '适用人群与使用禁忌',
+                'target_group': '适用人群',
+                'target1': '慢性压力、焦虑人群',
+                'target2': '睡眠品质差、失眠人群',
+                'target3': '精力不足、慢性疲劳人群',
+                'target4': '运动健身、追求体能提升人群',
+                'target5': '中老年荷尔蒙失衡人群',
+                'target6': '中老年频尿、漏尿、夜尿人群',
+                'target7': '轻中度肾功能减退（eGFR 45-90）人群',
+                'caution_group': '慎用/禁忌人群',
+                'caution1': '孕妇、哺乳期妇女（需医师指导）',
+                'caution2': '自身免疫疾病患者',
+                'caution3': '服用镇静剂/抗忧郁药物人群（需咨询医师）',
+                'caution4': '手术前2周（可能增强镇静效果）',
+                'caution5': '对茄科植物过敏者',
+                'caution6': '重度肾功能衰竭（eGFR < 15）人群（需肾科医师指导）',
+                'contact_title': '联系我们',
+                'contact_info': '企业资讯',
+                'contact_phone': '技术专线: ',
+                'contact_address': '台湾省',
+                'contact_hours': '服务时间：周一至周五 09:00-18:00',
+                'contact_btn': '发送咨询邮件',
+                'map_alt': '首池有限公司 办公地址导航',
+                'footer_brand': '活力得® 南非醉茄专利萃取精华<br>天然草本保健的黄金标准',
+                'footer_links': '快速链接',
+                'footer_summary': '执行摘要',
+                'footer_tech': '核心技术',
+                'footer_mechanism': '作用机转',
+                'footer_benefit': '效益与安全',
+                'footer_contact': '联系我们',
+                'footer_legal': '法律资讯',
+                'footer_privacy': '隐私政策',
+                'footer_terms': '使用条款',
+                'footer_disclaimer': '免责声明',
+                'footer_patent': '专利证明',
+                'footer_copyright': '© 2026 活力得® 版权所有'
+            },
+            'en': {
+                // 英文翻譯 (此處僅提供英文版本，實際應用時需完整)
+                'brand_name': 'Vitality®',
+                'nav_summary': 'Executive Summary',
+                'nav_tech': 'Core Technology',
+                'nav_mechanism': 'Mechanism',
+                'nav_benefit': 'Benefits & Safety',
+                'nav_contact': 'Contact',
+                'banner_alt': 'Vitality® Ashwagandha Organic Cultivation & Extraction Process',
+                'banner_title': 'Vitality® Ashwagandha (Withania somnifera) Patent Extract',
+                'banner_subtitle': 'Technical Data Sheet (TDS) | Standardized 5% Withanolides | Supercritical CO₂ Extraction | High Bioavailability<br class="md:hidden" /> [Targeting Middle-Aged & Senior Urinary Health] Frequent Urination/Leakage/Nocturia Improvement · Glomerular Function Enhancement',
+                'banner_footer': 'Vitality® Natural Herbal Supplement © 2026',
+                'summary_title': 'Executive Summary: Vitality® Core Value & Key Metrics',
+                'summary_desc': '<strong class="text-secondary">Core Positioning:</strong> Based on patented supercritical CO₂ extraction technology and biotransformation process, standardized extraction of active ingredients from Ashwagandha (Withania somnifera) root, targeting modern core pain points such as stress, sleep, and lack of energy, while focusing on urinary health issues in middle-aged and elderly (frequent urination/leakage/nocturia), improving glomerular filtration function, achieving a multi-dimensional "gold standard" of natural herbal health care.',
+                'card1_title': 'Withanolides Content',
+                'card1_comp': 'Traditional extract 2-3% → Standardized 5%',
+                'card1_value': '↑ 67-150%',
+                'card1_desc': 'Significant increase in active ingredient concentration',
+                'card2_title': 'Bioavailability',
+                'card2_comp': 'Ordinary powder 15% → Microencapsulated 45%',
+                'card2_value': '↑ 200%',
+                'card2_desc': 'Greatly improved human absorption efficiency',
+                'card3_title': 'Stress Hormone (Cortisol)',
+                'card3_comp': 'Baseline → Reduced by 28%',
+                'card3_value': '↓ 28%',
+                'card3_desc': 'Effectively alleviates chronic stress',
+                'card4_title': 'Nocturia Frequency',
+                'card4_comp': 'Baseline 4.2 times → Improved to 1.1 times',
+                'card4_value': '↓ 74%',
+                'card4_desc': 'Significant improvement in frequent night urination in the elderly',
+                'card5_title': 'eGFR (Glomerular Filtration Rate)',
+                'card5_comp': 'Baseline → Increased by 18%',
+                'card5_value': '↑ 18%',
+                'card5_desc': 'Optimization of core kidney function indicators',
+                'highlight_num': '98.7%',
+                'highlight_text': 'Active ingredient retention rate',
+                'highlight_badge1': 'Solvent-free',
+                'highlight_badge2': 'Certified organic',
+                'highlight_badge3': 'Targeted urinary health for seniors',
+                'tech_title': 'Vitality® Ashwagandha Core Extraction Technology Architecture',
+                'tech_desc1': '<strong class="text-secondary">Three-layer synergistic extraction process｜</strong>Precisely retains Ashwagandha active ingredients and biological activity',
+                'tech_sub1': 'Supercritical CO₂ Extraction',
+                'tech_sub1_desc': 'Low temperature, solvent-free, retains 98%+ active ingredients, avoids destruction of heat-sensitive components',
+                'tech_sub2': 'Biotransformation Technology',
+                'tech_sub2_desc': 'Through microbial fermentation technology, increases withanolides bioavailability by 200%',
+                'tech_sub3': 'Microencapsulation',
+                'tech_sub3_desc': 'Protects active ingredients from gastric acid destruction, ensures effective intestinal absorption',
+                'tech_dosage': '※ Recommended daily dose: 500mg (containing 5% withanolides), take with meals, 1-3 times/day',
+                'tech_note': 'Process is a trade secret, based on patented extraction platform and international cutting-edge herbal technology research<br>Production workshops comply with GMP/GACP international certification standards',
+                'tech_img_alt': 'Vitality® Ashwagandha three-layer synergistic extraction process',
+                'organic_title': 'Organic Cultivation & Raw Material Quality Control',
+                'organic_img_alt': 'Ashwagandha organic cultivation base',
+                'organic_desc': 'Vitality® Ashwagandha raw materials come from certified organic cultivation bases in Rajasthan, India, away from industrial pollution, using natural farming methods to ensure raw materials are free of pesticide residues and heavy metals meet international standards.',
+                'organic_bullet1': 'Raw materials pass ISO 17025 laboratory testing, heavy metals (lead/mercury/arsenic/cadmium) content below international limit standards',
+                'organic_bullet2': 'Pesticide residue test: 0 detected (covering 200+ common pesticide items)',
+                'organic_bullet3': 'Microbiological indicators: Total plate count < 100 CFU/g, E. coli/Salmonella/Mold all not detected',
+                'organic_bullet4': 'Raw materials are initially processed within 48 hours after harvest to ensure freshness and active ingredient retention',
+                'mechanism_title': 'Vitality® Ashwagandha Four Core Mechanisms of Action',
+                'chart1_title': 'Withanolides Content Comparison: Traditional Extraction vs Vitality® Patent Process',
+                'chart1_alt': 'Traditional extraction vs Vitality® patented process withanolides content comparison',
+                'chart1_caption': 'Traditional extraction only about 2-3%, Vitality® patented process standardized to 5%, active ingredients increased by over 67%',
+                'chart2_title': 'Cortisol Reduction Effect: Placebo vs Vitality® Ashwagandha Extract',
+                'chart2_alt': 'Placebo vs Vitality® Ashwagandha cortisol reduction effect comparison',
+                'chart2_caption': 'After 8 weeks of continuous use, Vitality® group cortisol decreased by 28%, sleep quality improved by 32%',
+                'chart3_title': 'Nocturia Improvement: Placebo vs Vitality® Ashwagandha Extract (Middle-aged & Elderly Group)',
+                'chart3_alt': 'Placebo vs Vitality® Ashwagandha nocturia improvement comparison',
+                'chart3_caption': 'After 12 weeks of continuous use, Vitality® group nocturia decreased by 74%, leakage incidence decreased by 68%',
+                'chart4_title': 'eGFR Improvement: Vitality® Ashwagandha vs Control Group',
+                'chart4_alt': 'Vitality® Ashwagandha eGFR improvement effect',
+                'chart4_caption': 'After 16 weeks of continuous use, Vitality® group eGFR increased by 18%, renal tubular reabsorption function optimized by 22%',
+                'table_col1': 'Technical Aspect',
+                'table_col2': 'Molecular Regulation Mechanism',
+                'table_col3': 'Direct Health Benefit',
+                'mech1_title': '28% Cortisol Reduction | Effectively Alleviates Chronic Stress',
+                'mech1_sub': '<strong>Core Mechanism:</strong> Multi-level regulation of HPA axis, inhibiting excessive stress response',
+                'mech1_row1_col1': 'HPA Axis Regulation',
+                'mech1_row1_col2': 'Withanolides inhibit overactivation of the hypothalamic-pituitary-adrenal axis, reducing ACTH secretion',
+                'mech1_row1_col3': '28% reduction in cortisol levels, alleviating anxiety, irritability and other stress symptoms',
+                'mech1_row2_col1': 'Neurotransmitter Balance',
+                'mech1_row2_col2': 'Increase GABA receptor binding, increase concentration of inhibitory neurotransmitters in the brain',
+                'mech1_row2_col3': 'Reduce sympathetic nerve excitement, enhance relaxation',
+                'mech1_row3_col1': 'Oxidative Stress Scavenging',
+                'mech1_row3_col2': 'Increase activities of antioxidant enzymes such as SOD, GSH-Px, scavenge free radicals generated by stress',
+                'mech1_row3_col3': 'Protect nerve cells, prevent cognitive decline caused by long-term stress',
+                'mech1_ref': '<strong>Scientific Basis:</strong> Studies in the Journal of Alternative and Complementary Medicine show that standardized Ashwagandha extract can significantly reduce cortisol levels in chronically stressed individuals by 28% (Choudhary et al., 2017); withanolides can enhance GABAergic neurotransmission and improve stress-related anxiety (Phytomedicine, 2020).',
+                'mech2_title': '32% Sleep Quality Improvement | Extends Deep Sleep Duration',
+                'mech2_sub': '<strong>Core Mechanism:</strong> Regulates sleep-wake cycle, improves sleep structure and quality',
+                'mech2_row1_col1': 'Melatonin Regulation',
+                'mech2_row1_col2': 'Withanolides increase melatonin synthesis efficiency in the pineal gland, regulate circadian rhythm',
+                'mech2_row1_col3': 'Sleep onset latency shortened by 18%, deep sleep time extended by 22%',
+                'mech2_row2_col1': 'Neuronal Excitability Inhibition',
+                'mech2_row2_col2': 'Inhibit monoamine oxidase (MAO) activity, increase serotonin and dopamine levels',
+                'mech2_row2_col3': 'Reduce nighttime awakenings, improve sleep continuity',
+                'mech2_row3_col1': 'Stress-Related Insomnia Improvement',
+                'mech2_row3_col2': 'Lower nighttime cortisol peaks, reduce stress-induced insomnia',
+                'mech2_row3_col3': 'Overall sleep quality score increased by 32%',
+                'mech2_ref': '<strong>Scientific Basis:</strong> Standardized Ashwagandha extract in randomized controlled trials has been shown to significantly improve sleep efficiency and total sleep time (Journal of Ethnopharmacology, 2019); withanolides can regulate melatonin secretion rhythm and improve sleep disorders in shift workers (Sleep Science, 2021).',
+                'mech3_title': '40% Energy Score Increase | Enhances Physical Performance & Recovery',
+                'mech3_sub': '<strong>Core Mechanism:</strong> Optimizes energy metabolism, reduces fatigue accumulation, improves muscle recovery',
+                'mech3_row1_col1': 'Energy Metabolism Optimization',
+                'mech3_row1_col2': 'Increase mitochondrial ATP synthesis efficiency, increase cellular energy supply',
+                'mech3_row1_col3': 'Fatigue score reduced by 35%, daily activity endurance increased by 40%',
+                'mech3_row2_col1': 'Accelerated Muscle Recovery',
+                'mech3_row2_col2': 'Lower post-exercise creatine kinase (CK) levels, reduce muscle damage',
+                'mech3_row2_col3': 'Post-exercise recovery time shortened by 25%, delayed onset muscle soreness reduced',
+                'mech3_row3_col1': 'Hormonal Balance',
+                'mech3_row3_col2': 'Increase testosterone levels (men), balance cortisol/testosterone ratio',
+                'mech3_row3_col3': 'Physical strength and athletic performance increased by 18%, chronic fatigue reduced',
+                'mech3_img_alt': 'Vitality® Ashwagandha energy improvement clinical data',
+                'mech3_ref': '<strong>Scientific Basis:</strong> Ashwagandha extract has been shown to significantly increase athletes\' VO2 max and endurance performance (Journal of the International Society of Sports Nutrition, 2018); withanolides can increase testosterone levels in men and improve energy and physical condition (Andrologia, 2022).',
+                'mech4_title': '74% Nocturia Reduction | 18% eGFR Increase (Targeting Middle-aged & Elderly)',
+                'mech4_sub': '<strong>Core Mechanism:</strong> Dual regulation of urinary system and kidney function, improving frequent urination/leakage/nocturia in middle-aged and elderly, enhancing glomerular filtration efficiency',
+                'mech4_row1_col1': 'Glomerular Function Protection',
+                'mech4_row1_col2': 'Withanolides inhibit mesangial cell proliferation and oxidative damage, increase podocyte survival, enhance filtration barrier integrity',
+                'mech4_row1_col3': 'eGFR increased by 18%, urinary microalbumin decreased by 31%',
+                'mech4_row2_col1': 'Detrusor Muscle Regulation',
+                'mech4_row2_col2': 'Regulate bladder smooth muscle M3 receptor expression, inhibit over-contraction, increase bladder capacity utilization',
+                'mech4_row2_col3': 'Frequent urination reduced by 62%, leakage incidence reduced by 68%',
+                'mech4_row3_col1': 'Nocturnal Antidiuretic Regulation',
+                'mech4_row3_col2': 'Increase nocturnal antidiuretic hormone (ADH) secretion, reduce renal water excretion',
+                'mech4_row3_col3': 'Nocturia reduced by 74%, nighttime urine output reduced by 58%',
+                'mech4_row4_col1': 'Urinary Anti-inflammatory',
+                'mech4_row4_col2': 'Inhibit NF-κB signaling pathway, reduce levels of chronic inflammatory factors (TNF-α/IL-6) in the urinary system',
+                'mech4_row4_col3': 'Urinary irritation symptoms relieved, discomfort during urination reduced by 45%',
+                'mech4_img_alt': 'Vitality® Ashwagandha urinary health clinical validation',
+                'mech4_ref': '<strong>Scientific Basis:</strong> In a randomized controlled trial in middle-aged and elderly populations, Vitality® Ashwagandha extract significantly reduced nocturia by 74% (Journal of Geriatric Urology, 2023); withanolides can protect glomerular podocytes and increase eGFR by 18% in rats with chronic kidney injury (Phytotherapy Research, 2024).',
+                'benefit_title': 'Vitality® Product Benefits & Safety | Scientifically Validated Natural Health Choice',
+                'benefit_table_title': 'Core Health Benefits｜Clinically Validated Results',
+                'benefit_col1': 'Health Indicator',
+                'benefit_col2': 'Improvement',
+                'benefit_col3': 'Trial Duration',
+                'benefit_row1_col1': 'Stress Score (PSS-10)',
+                'benefit_row1_col2': '↓ 30%',
+                'benefit_row1_col3': '8 weeks',
+                'benefit_row2_col1': 'Sleep Quality (PSQI)',
+                'benefit_row2_col2': '↓ 32%',
+                'benefit_row2_col3': '6 weeks',
+                'benefit_row3_col1': 'Energy Score',
+                'benefit_row3_col2': '↑ 40%',
+                'benefit_row3_col3': '4 weeks',
+                'benefit_row4_col1': 'Cognitive Agility',
+                'benefit_row4_col2': '↑ 15%',
+                'benefit_row4_col3': '12 weeks',
+                'benefit_row5_col1': 'Nocturia (Senior)',
+                'benefit_row5_col2': '↓ 74%',
+                'benefit_row5_col3': '12 weeks',
+                'benefit_row6_col1': 'eGFR',
+                'benefit_row6_col2': '↑ 18%',
+                'benefit_row6_col3': '16 weeks',
+                'benefit_row7_col1': 'Overall Quality of Life',
+                'benefit_row7_col2': '↑ 28%',
+                'benefit_row7_col3': '8 weeks',
+                'trial_label': 'Clinical Trial Sample Size',
+                'trial_num': '1,200+ subjects',
+                'trial_desc': 'Multi-center, randomized, double-blind, placebo-controlled trials (including 600+ subjects with urinary issues)',
+                'safety_title': 'Safety Data｜Long-term Use Risk Assessment',
+                'safety_col1': 'Assessment Indicator',
+                'safety_col2': 'Trial Result',
+                'safety_col3': 'Safety Level',
+                'safety_row1_col1': 'Liver & Kidney Function',
+                'safety_row1_col2': 'No significant difference from placebo',
+                'safety_row1_col3': 'Very Low Risk',
+                'safety_row2_col1': 'Adverse Reaction Rate',
+                'safety_row2_col2': '2.3% (mild gastrointestinal discomfort)',
+                'safety_row2_col3': 'Low Risk',
+                'safety_row3_col1': 'Long-term Use (12 months)',
+                'safety_row3_col2': 'No cumulative toxicity',
+                'safety_row3_col3': 'Safe',
+                'safety_row4_col1': 'Drug Interactions',
+                'safety_row4_col2': 'No significant interaction with common drugs',
+                'safety_row4_col3': 'Low Risk',
+                'safety_row5_col1': 'Overall Safety Rating',
+                'safety_row5_col2': '4.8/5.0',
+                'safety_row5_col3': 'Excellent',
+                'dosage_label': 'Recommended Daily Safe Dosage',
+                'dosage_value': '300-600 mg',
+                'dosage_desc': 'Standardized 5% withanolides extract | >1200mg requires professional consultation',
+                'target_title': 'Target Population & Contraindications',
+                'target_group': 'Target Population',
+                'target1': 'Chronic stress, anxiety',
+                'target2': 'Poor sleep quality, insomnia',
+                'target3': 'Lack of energy, chronic fatigue',
+                'target4': 'Fitness enthusiasts, seeking physical performance enhancement',
+                'target5': 'Middle-aged & elderly with hormonal imbalance',
+                'target6': 'Middle-aged & elderly with frequent urination, leakage, nocturia',
+                'target7': 'Mild to moderate renal impairment (eGFR 45-90)',
+                'caution_group': 'Use with Caution / Contraindications',
+                'caution1': 'Pregnant or breastfeeding women (consult physician)',
+                'caution2': 'Autoimmune disease patients',
+                'caution3': 'People taking sedatives/antidepressants (consult physician)',
+                'caution4': '2 weeks before surgery (may enhance sedative effects)',
+                'caution5': 'Allergic to Solanaceae plants',
+                'caution6': 'Severe renal failure (eGFR < 15) (requires nephrologist guidance)',
+                'contact_title': 'Contact Us',
+                'contact_info': 'Company Information',
+                'contact_phone': 'Technical Hotline: ',
+                'contact_address': 'Taiwan',
+                'contact_hours': 'Service Hours: Mon-Fri 09:00-18:00',
+                'contact_btn': 'Send Inquiry Email',
+                'map_alt': 'Shou Chi Co., Ltd. Office Navigation',
+                'footer_brand': 'Vitality® Ashwagandha Patent Extract<br>The Gold Standard of Natural Herbal Health',
+                'footer_links': 'Quick Links',
+                'footer_summary': 'Executive Summary',
+                'footer_tech': 'Core Technology',
+                'footer_mechanism': 'Mechanism',
+                'footer_benefit': 'Benefits & Safety',
+                'footer_contact': 'Contact',
+                'footer_legal': 'Legal Information',
+                'footer_privacy': 'Privacy Policy',
+                'footer_terms': 'Terms of Use',
+                'footer_disclaimer': 'Disclaimer',
+                'footer_patent': 'Patent Certification',
+                'footer_copyright': '© 2026 Vitality® All Rights Reserved'
+            }
+        };
+
+        // 匯率設定 (本頁面無貨幣轉換，保留為空)
+        const exchangeRates = {
+            'zh-TW': { rate: 1, symbol: 'NTD ' },
+            'zh-CN': { rate: 0.2192, symbol: '¥' },
+            'en':    { rate: 0.0320, symbol: '$' }
+        };
+        let currentLang = 'zh-TW';
+
+        // 語言切換功能
+        function switchLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('bg-primary', 'text-white');
+                } else {
+                    btn.classList.remove('bg-primary', 'text-white');
+                }
+            });
+            document.documentElement.lang = lang;
+
+            const dict = translations[lang] || translations['zh-TW'];
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (dict[key] !== undefined) {
+                    if (el.tagName === 'IMG' && el.hasAttribute('alt')) {
+                        el.alt = dict[key];
+                    } else {
+                        el.innerHTML = dict[key];
+                    }
+                }
+            });
+
+            // 本頁面無需更新貨幣數值
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 語言按鈕事件
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    switchLanguage(this.getAttribute('data-lang'));
+                });
+            });
+
+            // 行動端選單切換
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // 返回頂部按鈕
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.remove('opacity-0', 'invisible');
+                    backToTop.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTop.classList.add('opacity-0', 'invisible');
+                    backToTop.classList.remove('opacity-100', 'visible');
+                }
+            });
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // 預設語言
+            switchLanguage('zh-TW');
+        });
+    </script>
+</body>
+</html>
